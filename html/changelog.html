@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Persistent SS13 Changelog</title>
+  <link rel="stylesheet" type="text/css" href="changelog.css">
+  <base target="_blank" />
+  <script type='text/javascript'>
+  
+	function changeText(tagID, newText, linkTagID){
+		var tag = document.getElementById(tagID);
+		tag.innerHTML = newText;
+		var linkTag = document.getElementById(linkTagID);
+		linkTag.removeAttribute("href");
+		linkTag.removeAttribute("onclick");
+	}
+	
+  </script>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+<table align='center' width='650'><tr><td>
+<table align='center' class="top">
+	<tr>
+		<td valign='top'>
+			<div align='center'><font size='3'><b>Persistent SS13</b></font></div>
+			<div align='center'><font size='3'><b><i>A Space Station 13 Project</i></b></font></div>
+			<div align='center'><font size='3'><b><i>A <a href="https://github.com/Baystation12/Baystation12">Baystation 12</a> fork - All credits below mentioned are directly towards Persistent SS13 development and community.</i></b></font></div>
+			
+			<p><div align='center'><font size='3'><a href="https://persistentss13.com/wiki/">Wiki</a> | <a href="https://github.com/Persistent-SS13/Persistent-Bay/">Source code</a></font></div></p>
+            <font size='2'>Code licensed under <a href="http://www.gnu.org/licenses/agpl.html">AGPLv3</a>. Content licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.<br><br>
+			<font size='2'><b>Join our Discord server:</b> <a href='https://discord.gg/QCWcHxN'>-Click Here-</a><br></font>
+			</td>
+	</tr>
+</table>
+
+<br><b>Persistent SS13 Credit List</b>
+<table align='center' class="top">
+	<tr>
+		<td valign='top'>
+            <font size='2'><b>Developers:</b> Lead Developer FaurnsGoldberg - TODO <br></font>
+			<font size='2'><b>Currently Active GitHub contributor list:</b> <a href='https://github.com/Persistent-SS13/Persistent-Bay/graphs/contributors'>-Click Here-</a><br></font>
+			<p><font size='2'><b>Credits:</b> TODO <br></p>
+			<font size='2'><b>Special thanks to:</b> The developers of /tg/ station, /vg/station, GoonStation, Baystation and the original Space Station 13</font>
+			<div align='center'><font size='2' color='red'><b><br>Have a bug to report?</b> Visit our <a href="https://github.com/Persistent-SS13/Persistent-Bay/issues?labels=Bug&state=open">Issue Tracker</a>.<br></font></div>
+		</td>
+	</tr>
+</table>
+
+		<!--
+		
+		TO ADD AN ENTRY, ADD AND MAINTAIN YOUR OWN changelog/USERNAME.yml FILE. 
+		
+		*** DO NOT MODIFY THIS FILE OR YOU WILL CAUSE MERGE CONFLICTS. ***
+		
+		-->
+		<div class="commit sansserif">
+			<h2 class="date">28 November 2018</h2>
+			<h3 class="author">Andrew updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Added SSearly (initialization)</li>
+				<li class="rscadd">Added SSlate (initialization)</li>
+				<li class="rscadd">Added SSsupply</li>
+				<li class="tweak">Reworked gameticker into Master</li>
+				<li class="tweak">Various small changes</li>
+				<li class="rscdel">Removed master_controller</li>
+				<li class="rscdel">Removed ProcessScheduler</li>
+				<li class="rscdel">Removed various unneeded verbs and gamemodes</li>
+				<li class="rscadd">SSmusic with a music genre system and auto-ambience.</li>
+				<li class="bugfix">Fixed SSasteroid retaining mobs and drills.</li>
+				<li class="bugfix">Fixed flooring not saving and loading correctly.</li>
+				<li class="tweak">Renamed ambiance to ambience to be more consistent.</li>
+			</ul>
+			<h3 class="author">NataKilar updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Ported crawling from Baystation. You can now move very slowly if you are lying on the ground.</li>
+			</ul>
+			<h3 class="author">Unknown updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Added draw-able canvases.</li>
+				<li class="rscadd">Added supply crate for canvases on Non Essentials (10x for 150e)</li>
+			</ul>
+			<h3 class="author">ourpar updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">Fixed/re-added clothing sprites for the following items: 'red evening gown', 'maid uniform', 'maid apron', 'fine maid uniform', 'purple skirt', 'striped dress', 'blue skirt', 'red skirt', 'sailor dress', 'geisha dress', 'sexy black coat', 'eastern dress', 'security skirt'</li>
+				<li class="rscadd">Shortwave Radios, Ecigs, and Flashlights now require Device cells to operate, standard device cells can be obtained from the autolathe, or device upgraded cells from RnD, to remove/replace cells you screwdriver the item.</li>
+				<li class="tweak">Flares, candles, and glowsticks have adjusted lifespans before becoming useless, 15-30min, ~6 hours, ~24 hours respectively</li>
+				<li class="tweak">slightly strengthened lighting given from glowsticks and flaslights, cigarettes now give a faint glow when lit aswell</li>
+			</ul>
+			<h3 class="author">psycommando updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Ported baystation 12 sticky notes.</li>
+			</ul>
+
+			<h2 class="date">07 November 2018</h2>
+			<h3 class="author">AnAngrySlugReceptionist updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Ports Sushi from BS12</li>
+				<li class="rscadd">Ports some costumes from Polaris</li>
+			</ul>
+			<h3 class="author">Andrew-Fall updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">SSevent</li>
+				<li class="tweak">SSinactivity</li>
+				<li class="tweak">SSshuttles</li>
+				<li class="tweak">SSradiation</li>
+				<li class="tweak">SStrade</li>
+				<li class="tweak">SSevac</li>
+				<li class="tweak">SStgui</li>
+				<li class="tweak">SSopen_space</li>
+				<li class="tweak">SSsun</li>
+				<li class="tweak">SSwireless</li>
+				<li class="tweak">SSfast_process</li>
+				<li class="tweak">SSalarm</li>
+				<li class="tweak">SSturf</li>
+				<li class="tweak">SSautosave</li>
+				<li class="rscadd">Converts asteroid_aggression into SSasteroid</li>
+				<li class="rscadd">Ports SSnano and updates all users.</li>
+				<li class="rscadd">Ports SStimer.</li>
+				<li class="rscadd">Ports SSxenoarch.</li>
+				<li class="bugfix">Ports hub-visibility fix.</li>
+				<li class="tweak">Updates various flags to new system.</li>
+			</ul>
+			<h3 class="author">Kurgis updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Created new cargo tabs, along with various new orderables. This being flooring, custodial, livecargo, non-essentials, and assignments.</li>
+				<li class="rscdel">Removed the miscellaneous cargo tab.</li>
+				<li class="rscdel">Removed empty regeant cartridge order as you can craft them.</li>
+				<li class="rscdel">Removed various improper tags and labels from cargo which didn't need them.</li>
+				<li class="rscdel">Removed mention of the word crate or order from cargo orders, as it's already implied they will come in such a container.</li>
+				<li class="tweak">Adjusts the price of job crates, after moving their gear into other orders.</li>
+				<li class="tweak">Re-arranged cargo contents into various tabs, operations now focuses on the actual operation of Cargo. Job equipment/clothes have been moved into the new assignments tab. Various orders split between non-essentials and hospitality, with hospitality focusing on the usual duties of a Kitchen and Bar.</li>
+				<li class="bugfix">Prepared voidsuits will no longer come in supplypacks, as they cause issues when they are altered. Likely the first step of their total removal.</li>
+				<li class="experiment">You may now order a fax machine through cargo, usage result may vary.</li>
+				<li class="maptweak">NT Central Command redefined as CA Relay Outpost in map defines, should affect automated announcements and emergency messages.</li>
+			</ul>
+			<h3 class="author">Lynkzz updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Add several previously unused dresses & Wedding update dresses to the already existing Pretty Dresses supply crate.</li>
+			</ul>
+			<h3 class="author">Nappist updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">makes windoors deconstructable</li>
+				<li class="rscdel">Removed the grid_check aka power outage event from procing.</li>
+			</ul>
+			<h3 class="author">NataKilar updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">The normal weapon recharger is now buildable</li>
+				<li class="rscdel">Cells are no longer removeable from energy weapons</li>
+				<li class="tweak">Nitrous Oxide is now a viable anesthetic. Easier to use than sedative, but takes longer to take effect and takes longer for the patient to wake up</li>
+				<li class="bugfix">Fixes a bug in which Nitrous Oxide would build up eternally in patient's blood, resulting in endless sleep</li>
+				<li class="bugfix">Fixes a bug in which Carbon Dioxide and other gas types were duplicated, resulting in various issues with filtering</li>
+				<li class="imageadd">Added new sprites for walls</li>
+				<li class="imageadd">Added new sprites for airlocks</li>
+				<li class="imageadd">Added new sprites for grilles</li>
+				<li class="imageadd">Added new sprites for alarms and APCs</li>
+				<li class="rscadd">Added lowwalls, which effectively act as windowframes for connection to the new wall sprites</li>
+				<li class="rscadd">Airlocks and Walls are now paintable, using the floor painter</li>
+				<li class="rscadd">Added paint color presets to the paintgun</li>
+				<li class="rscadd">Added an option for painting stripes on walls and airlocks with the paintgun</li>
+				<li class="tweak">The floor painter has been renamed to paintgun</li>
+			</ul>
+			<h3 class="author">PsyCommando updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">Fixed pressure regulators being unusable in space, or in an unpowered area, after reloading.</li>
+				<li class="tweak">Made duct tape rolls have a finite number of usages. 30 to be exact.</li>
+				<li class="tweak">Crafting, surgery, restraints, and repairs involving tape all require a certain number of uses from a tape roll now.</li>
+				<li class="bugfix">Fixed the microwave not allowing users to use a screwdriver on it to deconstruct it, due to faulty conditionals logic.</li>
+				<li class="rscadd">Added a crate of 10 cable coils to the supply app. So we can actually get more of them.</li>
+				<li class="rscadd">Added Circuit boards for the suit storage unit and suit cycler. And added their design to RnD circuit imprinter.</li>
+				<li class="tweak">Made the suit cycler and suit storage units deconstructible and buildable.</li>
+				<li class="tweak">Made shuttle bridge computer deconstructible.</li>
+				<li class="bugfix">Fixed mechs not saving and reloading properly.</li>
+				<li class="bugfix">Fixed mech wreckages not saving and reloading properly.</li>
+				<li class="bugfix">Fixed runtime related to connecting mechs to an atmos connector in /obj/machinery/atmospherics/portables_connector/return_network_air()</li>
+				<li class="rscadd">You can now take down a mech wreckage with a pickaxe/jackhammer, leaving behind some cleanable oil and scrap.</li>
+				<li class="rscdel">Removed the hoverpod movement noise earrape.</li>
+			</ul>
+			<h3 class="author">TheGreatRevanchist updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">Updates several laser weapon/gun sprites, both in inventory and in-hand.</li>
+			</ul>
+			<h3 class="author">Unknown updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">Diagnosed and fixed yet another critical problem with condensation, this time a gameplay issue caused by dumbness of my part.</li>
+				<li class="bugfix">Should fix an issue that seems to occur when pumping contents from a canister to a tank.</li>
+				<li class="tweak">Some reworks on ARO were done to insure better gameplay by removing the water buffer.</li>
+				<li class="tweak">Future compatibility for individual filters for anything that uses ARO pumping.</li>
+				<li class="bugfix">ARO and Drain contents no longer vanish with them.</li>
+				<li class="tweak">Sinks and showers have been tweaked to embrace ARO for good. Also future compatibility for individual tube filters.</li>
+				<li class="tweak">Overall performance boost on SoM.</li>
+			</ul>
+			<h3 class="author">ingles98 updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscdel">Temporarily reverts SoM(Pt. 2) .</li>
+			</ul>
+			<h3 class="author">ourpar updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Hand-rolled cigarettes are once again craftable. Requires 1x carboard in the handcrafting menu.</li>
+				<li class="rscadd">The 'smoking pipe' and the 'corn cob pipe' are now obtainable, respectively found in 'Clothing - Luxury accessories' and as a wooden crafting recipe.</li>
+				<li class="tweak">Slightly adjusted the position of smoking pipe sprite when worn.</li>
+				<li class="bugfix">Printing a single cable piece from the autolathe no longer prints a whole stack</li>
+				<li class="bugfix">Suit cycler units now use core accesses</li>
+				<li class="bugfix">Proximity sensor no longer requires 'waste' material in the autolathe</li>
+				<li class="tweak">Air tank + emergency air tank now spawn with no air when printed from the autolathe, 'air tank' also costs 1000 units (1/2 sheet) of metal to print now.</li>
+				<li class="rscadd">Added 'miniature' and 'huge' welding tools to the autolathe, the minitature tool can fit into storage pouches like vests, but can only holds 5 fuel, while the huge tool can hold 80 fuel, but is too large to be placed into most storage containers.</li>
+				<li class="rscadd">Welding backpack tank and painted welding masks are now orderable from cargo, under engineering tab.</li>
+				<li class="tweak">Welding tools printed from the autolathe no longer include fuel.</li>
+				<li class="tweak">Adjusted item size and production price of experimental welding tool.</li>
+				<li class="bugfix">Suit jackets now have item sprites, allowing them to be safely worn without them getting stuck on your suit slot.</li>
+				<li class="bugfix">Added mob sprites for 'warden heavy armored vest' and 'commander heavy armored vest'.</li>
+				<li class="rscadd">Compant extinguishers are now available in the autolathe, they hold half the amount of water as regular extinguishers</li>
+				<li class="tweak">Extinguishers printed from the autolathe now start with 0 water</li>
+				<li class="rscadd">Added Mining, Engineering, Medical, Science, and Security softsuits into cargo with their own sprites. Rejoice poor people!</li>
+				<li class="tweak">All spacesuits now come in large crates, because consistency.</li>
+				<li class="tweak">Civilian/generic softsuits and emergency softsuits have new sprites.</li>
+			</ul>
+			<h3 class="author">rhicora updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">Ballistic weapons, especially automatics, will jam more often</li>
+				<li class="tweak">Laser weapons are now more accurate at long range</li>
+			</ul>
+
+			<h2 class="date">05 October 2018</h2>
+			<h3 class="author">PsyCommando updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Added a supply pack crate of 10 Duct Tape rolls. Rejoice!</li>
+				<li class="tweak">Made duct tape rolls have a finite number of usages. 30 to be exact.</li>
+				<li class="tweak">Crafting, surgery, restraints, and repairs involving tape all require a certain number of uses from a tape roll now.</li>
+			</ul>
+
+			<h2 class="date">30 September 2018</h2>
+			<h3 class="author">Kurgis updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="maptweak">NT Central Command redefined as CA Relay Outpost in map defines, should affect automated announcements and emergency messages.</li>
+			</ul>
+			<h3 class="author">Nappist updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">Makes windoors deconstructable.</li>
+			</ul>
+			<h3 class="author">PsyCommando updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">Fixed pressure regulators being unusable in space, or in an unpowered area, after reloading.</li>
+			</ul>
+		</div>
+
+<b>GoonStation 13 Development Team</b>
+	<div class = "top">
+	<b>Coders:</b> Stuntwaffle, Showtime, Pantaloons, Nannek, Keelin, Exadv1, hobnob, Justicefries, 0staf, sniperchance, AngriestIBM, BrianOBlivion<br>
+	<b>Spriters:</b> Supernorn, Haruhi, Stuntwaffle, Pantaloons, Rho, SynthOrange, I Said No<br>
+	</div>
+<br>
+<p class="lic"><a name="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="88x31.png" alt="Creative Commons License" /></a><br><i>Except where otherwise noted, Goon Station 13 is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-Noncommercial-Share Alike 3.0 License</a>.<br>Rights are currently extended to <a href="http://forums.somethingawful.com/">SomethingAwful Goons</a> only.</i></p>
+<p class="lic">Some icons by <a href="http://p.yusukekamiyamane.com/">Yusuke Kamiyamane</a>. All rights reserved. Licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>.</p>
+</td></tr></table>
+</body>
+</html>

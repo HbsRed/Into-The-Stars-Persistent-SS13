@@ -1,0 +1,195 @@
+
+{{if data.found_faction}}
+	{{:helper.link('Account Modification', 'home', {'action' : 'switchm', 'target' : 'mod'}, data.mmode ? 'disabled' : null)}}
+	{{:helper.link('ID Registration', 'home', {'action' : 'switchm', 'target' : 'id'}, data.submode ? 'disabled' : null)}}
+	{{:helper.link('Crew Manifest', 'folder-open', {'action' : 'switchm', 'target' : 'manifest'}, data.manifest_button ? 'disabled' : null)}}
+	{{if data.have_printer}} {{:helper.link('Print', 'print', {'action' : 'print'}, (!data.mmode || data.has_id) ? null : 'disabled')}} {{/if}}
+
+	{{if !data.mmode}}
+		{{if !data.submode}}
+			<div class='item'>
+			  <h2>Crew Manifest ({{:data.faction_name}})</h2>
+			</div>
+			<div class='item'>
+			  {{:data.manifest}}
+			</div>
+		{{else}}
+			<div class='item'>
+				<h2>ID Card Registration & Resyncing ({{:data.faction_name}})</h2>
+			</div>
+			<div class='item'>
+				<div class='itemLabel'>
+					Inserted ID:
+				</div>
+				<div class='itemContent'>
+					{{:helper.link(data.id_name, 'eject', {'action' : 'eject'})}}
+				</div>
+			</div>
+			<br>
+			<div class='item'>
+				<div class='itemLabel'>
+					Register on Access network:
+				</div>
+				<div class='itemContent'>
+					{{:helper.link('Register', '', {'action' : 'register_id'}, data.has_id ? null : 'disabled')}}
+				</div>
+			</div>
+			This adds the card to the access network, causing it to have its access for {{:data.faction_name}} according to the records on file.
+			<br><br>
+			<div class='item'>
+				<div class='itemLabel'>
+					Resync to Network:
+				</div>
+				<div class='itemContent'>
+					{{:helper.link('Resync', '', {'action' : 'resync_id'}, data.has_id ? null : 'disabled')}}
+				</div>
+			</div>
+			This syncs the card to the employment network, causing it to sync its details including assignment and photo according to the records on file.
+		{{/if}}
+	{{else}}
+		<div class='item'>
+		  <h2>Account Modification ({{:data.faction_name}})</h2>
+		</div>
+
+		{{if !data.has_id}}
+		  <span class='alert'><i>Please select a record to proceed.</i></span><br>
+		{{/if}}
+
+		<div class='item'>
+		  <div class='itemLabel'>
+			Target Identity:
+		  </div>
+		  <div class='itemContent'>
+			{{:helper.link(data.record_name, '', {'action' : 'search_name'})}} or<br><br>
+			{{:helper.link(data.id_name, 'eject', {'action' : 'eject'})}}{{:helper.link("Scan from card", '', {'action' : 'scan_id'})}}
+		  </div>
+		</div>
+		<hr>
+
+		{{if data.authenticated}}
+			{{if data.has_record}}
+				<div class='item'>
+					<h2>Details</h2>
+				</div>
+
+				<div class='item'>
+					<div class='itemLabel'>
+						Registered Name:
+					</div>
+					<div class='itemContent'>
+						{{:data.record_name}}
+					</div>
+				</div>
+				<div class='item'>
+					<div class='itemLabel'>
+						Duty Status:
+					</div>
+					<div class='itemContent'>
+						{{:data.duty_status}}
+					</div>
+				</div>
+
+				<div class='item'>
+					<div class='itemLabel'>
+						Duty Mangement:
+					</div>
+					<div class='itemContent'>
+						{{:helper.link('Terminate ' + data.record_name, 'gear', {'action' : 'terminate'}, data.terminated ? 'disabled' : null, data.terminated ? 'disabled' : 'linkDanger')}}
+						{{:helper.link('Renew', 'gear', {'action' : 'unterminate'}, !data.terminated ? 'disabled' : null, !data.terminated ? 'disabled' : null)}}
+					</div>
+				</div>
+
+				<div class='item'>
+					<h2>Assignment</h2>
+				</div>
+				<div class='item'>
+					<div class='itemLabel'>
+						Assignment UID:
+					</div>
+					<div class='itemContent'>
+						{{:data.assignment_uid}}
+					</div>
+				</div>
+				<div class='item'>
+					<div class='itemLabel'>
+						Current Rank:
+					</div>
+					<div class='itemContent'>
+						{{:data.current_rank}}
+					</div>
+				</div>
+				<div class='item'>
+					<div class='itemLabel'>
+						Rank Mangement:
+					</div>
+					<div class='itemContent'>
+						{{:helper.link('Vote to Promote', '', {'action' : 'promote'},data.promote_button != 1  ? 'disabled' : null, data.promote_button != 1  ? 'disabled' : null)}}{{:helper.link('X', '', {'action' : 'promote_cancel'},data.promote_button != 2  ? 'disabled' : null, data.promote_button != 2  ? 'disabled' : null)}}<br><br>
+						{{:helper.link('Vote to Demote', '', {'action' : 'demote'},data.demote_button != 1  ? 'disabled' : null, data.demote_button != 1  ? 'disabled' : null)}}{{:helper.link('X', '', {'action' : 'demote_cancel'},data.demote_button != 2  ? 'disabled' : null, data.demote_button != 2  ? 'disabled' : null)}}
+					</div>
+				</div>
+				<div class='item'>
+					<div class='itemLabel'>
+						Proper Title:
+					</div>
+					<div class='itemContent'>
+						{{:data.title}}
+					</div>
+				</div>
+				<div class='item'>
+					<div class='itemLabel'>
+						Custom Title:
+					</div>
+					<div class='itemContent'>
+						{{:data.custom_title}}
+					</div>
+				</div>
+				<div class='item'>
+					<div class='itemLabel'>
+						Expenses:
+					</div>
+					<div class='itemContent'>
+						{{:helper.link('Reset', '', {'action' : 'reset_expenses'}, null)}}{{:data.expenses}}/{{:data.expense_limit}}
+					</div>
+				</div>
+				<br><br>
+				{{:helper.link(data.assignments ? "Cancel Reassignment" : "Select New Assignment", 'gear', {'action' : 'togglea'}, null, data.assignments ? 'selected' : null)}}{{:helper.link(data.record ? "Close Records" : "View/Edit Employee Record", 'folder-open', {'action' : 'toggler'}, null, data.record ? 'selected' : null)}}
+				<div class='item'>
+				  {{if data.assignments}}
+					  <div id="all-value.jobs">
+						<table>
+						  <tr>
+							<th></th><th>Select new assignment</th>
+						  </tr>
+						  <tr>
+							<th>Special</th>
+							<td>
+							  {{:helper.link("Custom", '', {'action' : 'assign', 'assign_target' : 'Custom'})}}
+							</td>
+						  </tr>
+						{{for data.assignment_categories}}
+							<tr>
+								<th style="color: '#800080';">{{:value.name}}</th>
+								<td>
+									{{for value.assignments :assignmentValue:assignmentIndex}}
+										{{:helper.link(assignmentValue.name, '', {'action' : 'assign', 'assign_target' : assignmentValue.ref})}}
+									{{/for}}
+								</td>
+							</tr>
+						{{/for}}
+						</table>
+					  </div>
+				  {{/if}}
+				  {{if data.record}}
+					{{:helper.link("Edit Record", 'wrench', {'action' : 'edit_record'})}}
+					<br><br>
+					<div class='statusDisplay'>
+						{{:data.record_val}}
+					</div>
+				  {{/if}}
+				</div>
+			{{/if}}
+		{{/if}}
+	{{/if}}
+{{else}}
+	<h2>No Logistics Network found. Connect to a wireless network associated to a Lognet.</h2>
+{{/if}}

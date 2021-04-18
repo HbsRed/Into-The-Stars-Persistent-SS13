@@ -1,0 +1,60 @@
+{{if data.menu == 1}}
+	<h2>Recent Articles</h2><hr>
+		<div class='block'>
+			{{for data.articles}}
+				{{:helper.link(value.name, '', {'action' : 'selectArticle', 'target' : value.ref}, null)}}<br>
+			{{/for}}
+		</div>
+	<h2>Recently Published Feeds</h2><hr>
+		<div class='block'>
+			{{for data.feeds}}
+				{{:helper.link(value.name, '', {'action' : 'selectFeed', 'target' : value.ref}, null)}}<br> 
+			{{/for}}
+		</div>
+{{/if}}
+{{if data.menu == 2}}
+	<h1>{{:data.name}} (News Article)</h1><br>
+	{{:helper.link('Back', '', {'action' : 'deselectArticle'}, null)}}<br><br>
+	By: {{:data.author}}<br>
+	{{if data.allowed}}
+		<div class='block'>
+			{{:data.filedata}}
+		</div>
+	{{else}}
+		You do not have access to this article. Wear your valid ID and<br>
+		{{:helper.link('Click Here', '', {'action' : 'purchaseArticle'}, null)}}
+		to purchase access for {{:data.cost}}$$.
+	{{/if}}
+	
+{{/if}}
+{{if data.menu == 3}}
+	<h1>{{:data.name}} (News Issue)</h1><br>
+	{{:helper.link('Back', '', {'action' : 'deselectIssue'}, null)}}<br><br>
+	
+	A full physical copy of this issue can be printed for {{:data.cost}}$$.<br><br>
+	{{:helper.link('Purchase Paper', '', {'action' : 'purchaseIssue'}, null)}}
+	<h2>Articles</h2><hr>
+		<div class='block'>
+			{{for data.articles}}
+				{{:helper.link(value.name, '', {'action' : 'selectArticle', 'target' : value.ref}, null)}}<br>
+			{{/for}}
+		</div>
+		
+{{/if}}
+{{if data.menu == 4}}
+	<h1>{{:data.name}} (News Feed)</h1><br>
+	{{:helper.link('Back', '', {'action' : 'deselectFeed'}, null)}}<br><br>
+	
+	<h2>Articles/h2><hr>
+		<div class='block'>
+			{{for data.articles}}
+				{{:helper.link(value.name, '', {'action' : 'selectArticle', 'target' : value.ref}, null)}}<br>
+			{{/for}}
+		</div>
+	<h2>Published Issues</h2><hr>
+		<div class='block'>
+			{{for data.issues}}
+				{{:helper.link(value.name, '', {'action' : 'selectIssue', 'target' : value.ref}, null)}}<br> 
+			{{/for}}
+		</div>
+{{/if}}
