@@ -10,13 +10,11 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="ITS codebase" />
 <meta property="og:description" content="ITS codebase" />
-<!--link rel="canonical" href="https://hbsred.github.io/Into-The-Stars-Persistent-SS13/" /> -->
-<!--<meta property="og:url" content="https://hbsred.github.io/Into-The-Stars-Persistent-SS13/" /> -->
 <meta property="og:site_name" content="Into-The-Stars-Persistent-SS13" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Into-The-Stars-Persistent-SS13" />
-<script type="application/ld+json">
-{"description":"ITS codebase","url":"https://hbsred.github.io/Into-The-Stars-Persistent-SS13/","@type":"WebSite","headline":"Into-The-Stars-Persistent-SS13","name":"Into-The-Stars-Persistent-SS13","@context":"https://schema.org"}</script>
+<!--<script type="application/ld+json">
+{"description":"ITS codebase","url":"https://hbsred.github.io/Into-The-Stars-Persistent-SS13/","@type":"WebSite","headline":"Into-The-Stars-Persistent-SS13","name":"Into-The-Stars-Persistent-SS13","@context":"https://schema.org"}</script>-->
 <!-- End Jekyll SEO tag -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
