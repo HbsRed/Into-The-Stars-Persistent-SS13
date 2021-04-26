@@ -1,5 +1,11 @@
-## Welcome to GitHub Pages
+<head>
+  <link rel='stylesheet' href='dot.css' type='text/css' media='all'/>
+</head>
 
+## Welcome to GitHub Pages
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
 You can use the [editor on GitHub](https://github.com/HbsRed/Into-The-Stars-Persistent-SS13/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
