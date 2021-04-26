@@ -22,20 +22,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <link rel="stylesheet" href="/Into-The-Stars-Persistent-SS13/assets/css/style.css?v=4a6909b539a575fbbce068f63835fe431453f3cd">
+    <link rel="stylesheet" href="dot.css" type="text/css" media="all" />
   </head>
   <body class=".bg">
-    <section class="page-header">
       <h1 class="project-name">Into-The-Stars-Persistent-SS13</h1>
       <h2 class="project-tagline">ITS codebase</h2>
       
         <a href="https://github.com/HbsRed/Into-The-Stars-Persistent-SS13" class="btn">View on GitHub</a>
-      
-      
-    </section>
-
-    <section class="main-content">
-      <head>
-  <link rel="stylesheet" href="dot.css" type="text/css" media="all" />
+        
 
 ## Welcome to GitHub Pages
 <div id="stars"></div>
