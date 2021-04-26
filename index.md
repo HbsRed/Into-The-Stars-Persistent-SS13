@@ -23,7 +23,7 @@
     <meta name="theme-color" content="#157878">
     <link rel="stylesheet" href="/Into-The-Stars-Persistent-SS13/assets/css/style.css?v=4a6909b539a575fbbce068f63835fe431453f3cd">
   </head>
-  <body>
+  <body class=".bg">
     <section class="page-header">
       <h1 class="project-name">Into-The-Stars-Persistent-SS13</h1>
       <h2 class="project-tagline">ITS codebase</h2>
@@ -36,7 +36,7 @@
     <section class="main-content">
       <head>
   <link rel="stylesheet" href="dot.css" type="text/css" media="all" />
-<!-- <body class=".bg"> -->
+
 ## Welcome to GitHub Pages
 <div id="stars"></div>
 <div id="stars2"></div>
