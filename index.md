@@ -36,8 +36,7 @@
     <section class="main-content">
       <head>
   <link rel="stylesheet" href="dot.css" type="text/css" media="all" />
-</head>
-<body class=".bg">
+<!-- <body class=".bg"> -->
 ## Welcome to GitHub Pages
 <div id="stars"></div>
 <div id="stars2"></div>
