@@ -1,14 +1,10 @@
-<!DOCTYPE html>
 <html lang="en-US">
   <head>
     <meta charset="UTF-8">
-
-<!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Into The Stars Persistent SS13</title>
-    <link rel="stylesheet" href="dot.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="dot.css" type="text/css"/>
   </head>
-  <body class="bg">      
-        <a href="https://github.com/HbsRed/Into-The-Stars-Persistent-SS13" class="btn">View on GitHub</a>
+  <body class="bg">
 <div id="stars"></div>
 <div id="stars2"></div>
 <div id="stars3"></div>
