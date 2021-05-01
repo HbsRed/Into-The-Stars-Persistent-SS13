@@ -229,6 +229,14 @@
 	containername = "\improper .45 practice ammunition crate"
 	access = core_access_security_programs
 
+/decl/hierarchy/supply_pack/security/c9mm
+	name = "Ammunition - 9mm ammunition crate"
+	contains = list(/obj/item/ammo_magazine/mc9mm = 8)
+	cost = 10
+	containertype = /obj/structure/closet/crate/secure/weapon
+	containername = "\improper 9mm (lethal) ammunition crate"
+	access = core_access_security_programs
+
 /decl/hierarchy/supply_pack/security/pdwammopractice
 	name = "Ammunition - 9mm top mounted practice"
 	contains = list(/obj/item/ammo_magazine/mc9mmt/practice = 8)
@@ -253,7 +261,7 @@
 	containername = "\improper .45 ACP (Lethal) ammunition crate"
 	access = core_access_security_programs
 
-/decl/hierarchy/supply_pack/security/pistolammoofficer
+/decl/hierarchy/supply_pack/security/stsammo
 	name = "Ammunition - 5.56 (Lethal)"
 	contains = list(/obj/item/ammo_magazine/c556 = 3)
 	cost = 20
