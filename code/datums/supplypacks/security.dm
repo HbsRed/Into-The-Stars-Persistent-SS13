@@ -188,6 +188,14 @@
 	containername = "detective handgun crate"
 	access = core_access_security_programs
 
+/decl/hierarchy/supply_pack/security/weapons_officer
+	name = "Weapons - WT25 handgun"
+	contains = list(/obj/item/weapon/gun/projectile/colt/officer = 3)
+	cost = 50
+	containertype = /obj/structure/closet/crate/secure/weapon
+	containername = "WT45 handguns crate"
+	access = core_access_security_programs
+
 /decl/hierarchy/supply_pack/security/weapons_shotguns
 	name = "Weapons - Riot shotguns (x3)"
 	contains = list(/obj/item/weapon/gun/projectile/shotgun/pump = 3)
@@ -202,6 +210,14 @@
 	cost = 35
 	containertype = /obj/structure/closet/crate/secure/weapon
 	containername = "double-barreled shotgun crate"
+	access = core_access_security_programs
+
+/decl/hierarchy/supply_pack/security/arifle
+	name = "Weapons - STS-35"
+	contains = list(/obj/item/weapon/gun/projectile/automatic/sts35)
+	cost = 50
+	containertype = /obj/structure/closet/crate/secure/weapon
+	containername = "STS-35 rifle crate"
 	access = core_access_security_programs
 
 //ammunition
@@ -227,6 +243,22 @@
 	cost = 8
 	containertype = /obj/structure/closet/crate/secure/weapon
 	containername = "\improper 7.62 practice ammunition crate"
+	access = core_access_security_programs
+
+/decl/hierarchy/supply_pack/security/pistolammoofficer
+	name = "Ammunition - .45 ACP (Lethal)"
+	contains = list(/obj/item/ammo_magazine/c45m = 8)
+	cost = 20
+	containertype = /obj/structure/closet/crate/secure/weapon
+	containername = "\improper .45 ACP (Lethal) ammunition crate"
+	access = core_access_security_programs
+
+/decl/hierarchy/supply_pack/security/pistolammoofficer
+	name = "Ammunition - 5.56 (Lethal)"
+	contains = list(/obj/item/ammo_magazine/c556 = 3)
+	cost = 20
+	containertype = /obj/structure/closet/crate/secure/weapon
+	containername = "\improper 5.56 (Lethal) ammunition crate"
 	access = core_access_security_programs
 
 //clothing
