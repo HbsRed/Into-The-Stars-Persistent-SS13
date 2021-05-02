@@ -381,6 +381,7 @@ var/global/list/debug_data = list()
 	Save_Records(dir)
 
 	to_file(f["next_account_number"],next_account_number)
+	SSplants.save(f)
 	if(reallow) config.enter_allowed = 1
 	to_world("Saving Completed in [(REALTIMEOFDAY - starttime)/10] seconds!")
 	to_world("Saving Complete")
@@ -451,6 +452,7 @@ var/global/list/debug_data = list()
 	from_file(f["factions"],GLOB.all_world_factions)
 	from_file(f["businesses"],GLOB.all_business)
 	from_file(f["next_account_number"],next_account_number)
+	SSplants.load(f)
 	var/list/areas
 	from_file(f["areas"],areas)
 	for(var/datum/area_holder/holder in areas)
