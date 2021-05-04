@@ -55,6 +55,7 @@
 #define PULSE_THREADY 5 // Occurs during hypovolemic shock
 #define GETPULSE_HAND 0 // Less accurate. (hand)
 #define GETPULSE_TOOL 1 // More accurate. (med scanner, sleeper, etc.)
+#define PULSE_MAX_BPM 250 // Highest, readable BPM by machines and humans.
 
 //intent flags
 #define I_HELP		"help"

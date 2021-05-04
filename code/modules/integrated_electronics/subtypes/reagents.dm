@@ -2,10 +2,9 @@
 #define IC_REAGENTS_DRAW 0
 #define IC_REAGENTS_INJECT 1
 
-
 /obj/item/integrated_circuit/reagent
 	category_text = "Reagent"
-	unacidable = 1
+	unacidable = TRUE
 	cooldown_per_use = 10
 	var/volume = 0
 
@@ -155,8 +154,8 @@
 		return
 	var/atom/movable/acting_object = get_object()
 
-	C.visible_message("<span class='warning'>\The [acting_object] draws blood from you.</span>",
-					"<span class='warning'>\The [acting_object] draws blood from \the [C]</span>"
+	C.visible_message("<span class='warning'>\The [acting_object] draws blood from \the [C]</span>",
+					"<span class='warning'>\The [acting_object] draws blood from you.</span>"
 					)
 	C.take_blood(src, amount)
 	activate_pin(2)
@@ -176,7 +175,7 @@
 		return
 
 	if(direction_mode == IC_REAGENTS_INJECT)
-		if(!reagents.total_volume || !AM.is_open_container() || !AM.reagents || !AM.reagents.get_free_space())
+		if(!reagents.total_volume || !AM.reagents || !AM.reagents.get_free_space())
 			activate_pin(3)
 			return
 
@@ -194,11 +193,15 @@
 			spawn(injection_status * 3 SECONDS)
 				inject_after(weakref(L))
 			return
-
 		else
+			if(!AM.is_open_container())
+				activate_pin(3)
+				return
+
+
 			reagents.trans_to(AM, transfer_amount)
 
-	if(direction_mode == IC_REAGENTS_DRAW)
+	else if(direction_mode == IC_REAGENTS_DRAW)
 		if(reagents.total_volume >= reagents.maximum_volume)
 			acting_object.visible_message("\The [acting_object] tries to draw from [AM], but the injector is full.")
 			activate_pin(3)
@@ -302,7 +305,7 @@
 		"volume used" = IC_PINTYPE_NUMBER,
 		"self reference" = IC_PINTYPE_REF
 		)
-	activators = list("push ref" = IC_PINTYPE_PULSE_OUT)
+	activators = list("push ref" = IC_PINTYPE_PULSE_IN)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
 
@@ -371,12 +374,18 @@
 		activate_pin(3)
 		return FALSE
 	var/obj/item/I = get_pin_data_as_type(IC_INPUT, 1, /obj/item)
+
+	if(isnull(I))
+		return FALSE
+
 	if(!I.reagents || !I.reagents.total_volume)
 		activate_pin(3)
 		return FALSE
+
 	I.reagents.trans_to(src,I.reagents.total_volume)
 	if(!I.reagents.total_volume)
 		qdel(I)
+
 	activate_pin(2)
 	return FALSE
 
@@ -479,6 +488,43 @@
 				source.reagents.trans_type_to(target, G.type, transfer_amount)
 	activate_pin(2)
 	push_data()
+
+// This is an input circuit because attackby_react is only called for input circuits
+/obj/item/integrated_circuit/input/funnel
+	category_text = "Reagent"
+	name = "reagent funnel"
+	desc = "A funnel with a small pump that lets you refill an internal reagent storage."
+	icon_state = "reagent_funnel"
+
+	inputs = list(
+		"target" = IC_PINTYPE_REF
+	)
+	activators = list(
+		"on transfer" = IC_PINTYPE_PULSE_OUT
+	)
+
+	unacidable = TRUE
+	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
+	complexity = 4
+	power_draw_per_use = 5
+
+/obj/item/integrated_circuit/input/funnel/attackby_react(obj/item/I, mob/living/user, intent)
+	var/atom/movable/target = get_pin_data_as_type(IC_INPUT, 1, /atom/movable)
+	var/obj/item/weapon/reagent_containers/container = I
+
+	if(!check_target(target))
+		return FALSE
+
+	if(!istype(container))
+		return FALSE
+
+	// Messages are provided by standard_pour_into
+	if(container.standard_pour_into(user, target))
+		activate_pin(1)
+		return TRUE
+
+	return FALSE
+
 
 #undef IC_REAGENTS_DRAW
 #undef IC_REAGENTS_INJECT
