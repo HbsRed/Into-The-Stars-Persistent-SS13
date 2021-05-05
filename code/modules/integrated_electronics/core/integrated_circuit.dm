@@ -328,8 +328,9 @@ a creative player the means to solve many problems.  Circuits are held inside an
 /obj/item/integrated_circuit/proc/check_power()
 	if(!assembly)
 		return FALSE // Not in an assembly, therefore no power.
-	if(assembly.draw_power(power_draw_per_use))
-		return TRUE // Battery has enough.
+	if(assembly.battery.charge >= power_draw_per_use * CELLRATE) // Make sure we have enough power before we proceed
+		if(assembly.draw_power(power_draw_per_use))
+			return TRUE // Battery has enough.
 	return FALSE // Not enough power.
 
 /obj/item/integrated_circuit/proc/check_then_do_work(ord,var/ignore_power = FALSE)

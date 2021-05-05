@@ -410,6 +410,9 @@
 /obj/item/device/electronic_assembly/attackby(obj/item/I, mob/living/user)
 	if(istype(I, /obj/item/weapon/wrench))
 		if(istype(loc, /turf) && (IC_FLAG_ANCHORABLE & circuit_flags))
+			if(!opened)
+				to_chat(user, "You can't access the bolts while it is closed.")
+				return FALSE
 			user.visible_message("\The [user] wrenches \the [src]'s anchoring bolts [anchored ? "back" : "into position"].")
 			playsound(get_turf(user), 'sound/items/Ratchet.ogg',50)
 			anchored = !anchored

@@ -535,6 +535,7 @@
 	if(istype(G))
 		G.update_outputs()
 
+
 /obj/item/integrated_circuit/manipulation/bluespace_rift
 	name = "bluespace rift generator"
 	desc = "This powerful circuit can open rifts to another realspace location through bluespace."
@@ -546,10 +547,11 @@
 	complexity = 100
 	size = 3
 	cooldown_per_use = 10 SECONDS
-	power_draw_per_use = 2500
+	power_draw_per_use = 2500 / CELLRATE
 	inputs = list("teleporter", "rift direction")
 	outputs = list()
 	activators = list("open rift" = IC_PINTYPE_PULSE_IN)
+	spawn_flags = IC_SPAWN_RESEARCH
 	action_flags = IC_ACTION_LONG_RANGE
 
 	origin_tech = list(TECH_MAGNET = 1, TECH_BLUESPACE = 3)
@@ -581,6 +583,7 @@
 	new /obj/effect/portal(depart, arrive, 30 SECONDS, 33)
 	playsound(src, 'sound/effects/sparks2.ogg', 50, 1)
 
+
 /obj/item/integrated_circuit/manipulation/anchoring
 	name = "anchoring bolts"
 	desc = "Pop-out anchoring bolts which can secure an assembly to the floor."
@@ -603,10 +606,6 @@
 	if(!isturf(assembly.loc))
 		return
 
-	// Doesn't work with anchorable assemblies
-	if(assembly.circuit_flags & IC_FLAG_ANCHORABLE)
-		visible_message("<span class='warning'>\The [get_object()]'s anchoring bolt circuitry blinks red. The preinstalled assembly anchoring bolts are in the way of the pop-out bolts!</span>")
-		return
 
 	if(ord == 1)
 		assembly.anchored = !assembly.anchored
