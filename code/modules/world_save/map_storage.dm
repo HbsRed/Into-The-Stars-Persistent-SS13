@@ -102,6 +102,8 @@ var/global/list/debug_data = list()
 
 /mob/living/carbon/human/after_load()
 	..()
+	species.handle_pre_spawn(src)
+	species.handle_post_spawn(src)
 	regenerate_icons()
 	redraw_inv()
 	handle_organs(1)
