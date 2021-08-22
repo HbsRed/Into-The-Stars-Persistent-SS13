@@ -196,6 +196,11 @@
 	base_icon = "officechair_dark"
 	icon_state = "officechair_dark_preview"
 
+/obj/structure/bed/chair/office/luxchair
+	base_icon = "luxchair"
+	icon_state = "luxchair_preview"
+	desc = "A very luxurious cotton chair. So comfortable."
+
 // Chair types
 /obj/structure/bed/chair/wood
 	desc = "Old is never too old to not be in fashion."

@@ -281,6 +281,9 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/weapon/cigbutt/jerichos
 	icon_state = "cigbuttjer"
 
+/obj/item/weapon/cigbutt/shellguard
+	icon_state = "cigbuttshell"
+
 /obj/item/clothing/mask/smokable/cigarette/carcinomas
 	name = "dark cigarette"
 	brand = "\improper Carcinoma Angel"
@@ -291,6 +294,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	brand = "\improper Professional"
 	icon_state = "cigpro"
 	type_butt = /obj/item/weapon/cigbutt/professionals
+	filling = list(/datum/reagent/tobacco/bad = 1)
+
+/obj/item/clothing/mask/smokable/cigarette/shellguard
+	name = "shellguard cigarette"
+	brand = "\improper shellguard"
+	icon_state = "cigshell"
+	type_butt = /obj/item/weapon/cigbutt/shellguard
 	filling = list(/datum/reagent/tobacco/bad = 1)
 
 /obj/item/weapon/cigbutt/professionals
@@ -624,6 +634,48 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "The zippo."
 	icon_state = "zippo"
 	item_state = "zippo"
+	max_fuel = 10
+
+/obj/item/weapon/flame/lighter/goldzippo
+	name = "golden Zippo lighter"
+	desc = "A 24 carat gold Zippo Lighter."
+	icon_state = "goldzippo"
+	item_state = "goldzippo"
+	max_fuel = 17
+
+/obj/item/weapon/flame/lighter/blackzippo
+	name = "black Zippo lighter"
+	desc = "A black painted Zippo Lighter."
+	icon_state = "blackzippo"
+	item_state = "blackzippo"
+	max_fuel = 10
+
+/obj/item/weapon/flame/lighter/redzippo
+	name = "red Zippo lighter"
+	desc = "A red zippo."
+	icon_state = "redzippo"
+	item_state = "redzippo"
+	max_fuel = 10
+
+/obj/item/weapon/flame/lighter/ntzippo
+	name = "Nanotrasen Zippo lighter"
+	desc = "This zippo lighter is only given to our most excellent employees."
+	icon_state = "ntzippo"
+	item_state = "ntzippo"
+	max_fuel = 10
+
+/obj/item/weapon/flame/lighter/fancyzippo
+	name = "fancy Zippo lighter"
+	desc = "This Zippo lighter is using plasma to ignite a flame."
+	icon_state = "fancyzippo"
+	item_state = "fancyzippo"
+	max_fuel = 30
+
+/obj/item/weapon/flame/lighter/greenzippo
+	name = "green Zippo lighter"
+	desc = "A green zippo."
+	icon_state = "greenzippo"
+	item_state = "greenzippo"
 	max_fuel = 10
 
 /obj/item/weapon/flame/lighter/zippo/light_effects(mob/user)

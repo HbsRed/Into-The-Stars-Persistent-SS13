@@ -1226,6 +1226,7 @@
 #include "code\modules\awaymissions\zlevel.dm"
 #include "code\modules\blob\blob.dm"
 #include "code\modules\client\asset_cache.dm"
+#include "code\modules\client\client_color.dm"
 #include "code\modules\client\client_defines.dm"
 #include "code\modules\client\client_fps.dm"
 #include "code\modules\client\client_helpers.dm"

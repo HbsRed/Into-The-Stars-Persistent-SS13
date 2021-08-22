@@ -125,6 +125,15 @@
 	projectile = /obj/item/projectile/beam/stun
 	fire_sound = 'sound/weapons/Taser.ogg'
 
+/obj/item/weapon/gun/energy/confuseray
+	name = "disorientator"
+	desc = "The W-T Mk. 4 Disorientator is a small, low capacity, and short-ranged energy projector intended for personal defense with minimal risk of permanent damage or cross-fire."
+	item_state = "confuseray"
+	icon_state = "confuseray"
+	w_class = ITEM_SIZE_SMALL
+	max_shots = 4
+	projectile_type = /obj/item/projectile/beam/confuseray
+
 /* Commenting this out rather than removing it because it may be useful for reference.
 /obj/item/mecha_parts/mecha_equipment/weapon/honker
 	name = "\improper HoNkER BlAsT 5000"

@@ -193,3 +193,54 @@
 	name = "heavy shock beam"
 	damage = 20
 	agony  = 10
+
+/obj/item/projectile/beam/confuseray
+	name = "disorientator ray"
+	icon_state = "beam_grass"
+	fire_sound='sound/effects/bang.ogg'
+	damage = 2
+	agony = 7
+	sharp = FALSE
+	damage_type = STUN
+	penetration_modifier = 0
+	var/potency_min = 4
+	var/potency_max = 6
+
+	muzzle_type = /obj/effect/projectile/stun/muzzle
+	tracer_type = /obj/effect/projectile/stun/tracer
+	impact_type = /obj/effect/projectile/stun/impact
+
+/obj/item/projectile/beam/confuseray/on_hit(var/atom/target, var/blocked = 0)
+	if(istype(target, /mob/living))
+		var/mob/living/L = target
+		var/potency = rand(potency_min, potency_max)
+		L.confused += potency
+		L.eye_blurry += potency
+		if(L.confused >= 10)
+			L.Stun(1)
+			L.drop_l_hand()
+			L.drop_r_hand()
+
+	return 1
+
+/obj/item/projectile/beam/incendiary_laser
+	name = "scattered laser blast"
+	icon_state = "beam_incen"
+	fire_sound = 'sound/weapons/Taser.ogg'
+	damage = 12
+	agony = 8
+	eyeblur = 8
+	sharp = FALSE
+	penetration_modifier = 0.1
+
+	muzzle_type = /obj/effect/projectile/stun/muzzle
+	tracer_type = /obj/effect/projectile/stun/tracer
+	impact_type = /obj/effect/projectile/stun/impact
+
+/obj/item/projectile/beam/incendiary_laser/on_hit(var/atom/target, var/blocked = 0)
+	..()
+	if(isliving(target))
+		var/mob/living/L = target
+		L.adjust_fire_stacks(rand(2,4))
+		if(L.fire_stacks >= 3)
+			L.IgniteMob()

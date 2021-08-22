@@ -213,3 +213,11 @@ obj/item/weapon/gun/energy/staff/focus
 	sharp=1
 	edge=1
 	load_method = ENERGY_LOAD_HOTSWAP_CELL
+
+/obj/item/weapon/gun/energy/incendiary_laser
+	name = "dispersive blaster"
+	desc = "The A&M 'Shayatin' was the first of a class of dispersive laser weapons which, instead of firing a focused beam, scan over a target rapidly with the goal of setting it ablaze."
+	icon_state = "incen"
+	item_state = "incen"
+	projectile_type = /obj/item/projectile/beam/incendiary_laser
+	max_shots = 4

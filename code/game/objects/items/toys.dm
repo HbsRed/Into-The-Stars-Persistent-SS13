@@ -437,6 +437,18 @@
 	icon_state = "assistant"
 	icon = 'icons/obj/toy.dmi'
 
+/obj/item/toy/lux/goldmedal
+	name = "Golden medal"
+	desc = "A 24 carat gold medal with a purple gem in the middle."
+	icon_state = "goldmedal"
+	icon = 'icons/obj/toy.dmi'
+
+/obj/item/toy/lux/bronzemedal
+	name = "Bronze medal"
+	desc = "A bronze medal with a green gem in the middle."
+	icon_state = "bronzemedal"
+	icon = 'icons/obj/toy.dmi'
+
 /obj/item/toy/figure/cmo
 	name = "Chief Medical Officer action figure"
 	desc = "A \"Space Life\" brand Chief Medical Officer action figure."

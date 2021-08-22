@@ -47,3 +47,8 @@
 	var/static/obj/screen/click_catcher/void
 
 	var/reset_stretch = 0 //Used by things that fiddle with client's stretch-to-fit.
+
+	///goonchat chatoutput of the client
+	var/datum/chatOutput/chatOutput
+
+	var/fullscreen = FALSE

@@ -8,7 +8,6 @@ datum/preferences
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
 	var/chosen_slot = 0
 	var/savefile_version = 0
-
 	//non-preference stuff
 	var/warns = 0
 	var/muted = 0
@@ -377,7 +376,7 @@ datum/preferences
 	F["name"] << M.real_name
 	F["mob"] << M
 	qdel(M)
-	
+
 /proc/Character(var/ind, var/ckey)
 	if(!fexists(load_path(ckey, "[ind].sav")))
 		return

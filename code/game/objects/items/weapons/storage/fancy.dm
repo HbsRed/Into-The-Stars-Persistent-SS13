@@ -194,6 +194,15 @@
 /obj/item/weapon/storage/fancy/cigarettes/dromedaryco/blank
 	startswith = list()
 
+/obj/item/weapon/storage/fancy/cigarettes/shellguard
+	name = "pack of Shellguard cigarettes"
+	desc = "A packet of 10 shellguard fancy red cigarettes."
+	icon_state = "shellguard"
+	startswith = list(/obj/item/clothing/mask/smokable/cigarette/shellguard = 10)
+
+/obj/item/weapon/storage/fancy/cigarettes/shellguard/blank
+	startswith = list()
+
 /obj/item/weapon/storage/fancy/cigarettes/killthroat
 	name = "pack of Acme Co. cigarettes"
 	desc = "A packet of six Acme Company cigarettes. For those who somehow want to obtain the record for the most amount of cancerous tumors."
