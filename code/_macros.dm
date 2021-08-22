@@ -1,6 +1,8 @@
 #define Clamp(value, low, high) 	(value <= low ? low : (value >= high ? high : value))
 #define CLAMP01(x) 		(Clamp(x, 0, 1))
 
+#define list_find(L, needle, LIMITS...) L.Find(needle, LIMITS)
+
 #define get_turf(A) get_step(A,0)
 
 #define isAI(A) istype(A, /mob/living/silicon/ai)
