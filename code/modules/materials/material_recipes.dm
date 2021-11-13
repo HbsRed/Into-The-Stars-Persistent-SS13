@@ -145,6 +145,7 @@
 	..()
 	recipes += new/datum/stack_recipe("plastic crate", /obj/structure/closet/crate/plastic, 5, time = 50, one_per_turf = 1, on_floor = 1)
 	recipes += new/datum/stack_recipe("plastic bag", /obj/item/weapon/storage/bag/plasticbag, 3, on_floor = 1)
+	recipes += new/datum/stack_recipe("plastic wastebin",/obj/item/weapon/storage/bag/wastebin, 3, on_floor = 1)
 	recipes += new/datum/stack_recipe("blood pack", /obj/item/weapon/reagent_containers/blood/empty, 4, on_floor = 0)
 	recipes += new/datum/stack_recipe("reagent dispenser cartridge (large)", /obj/item/weapon/reagent_containers/chem_disp_cartridge,        5, on_floor=0) // 500u
 	recipes += new/datum/stack_recipe("reagent dispenser cartridge (med)",   /obj/item/weapon/reagent_containers/chem_disp_cartridge/medium, 3, on_floor=0) // 250u
@@ -206,7 +207,7 @@
 		new/datum/stack_recipe("box", /obj/item/weapon/storage/box), \
 		new/datum/stack_recipe("large box", /obj/item/weapon/storage/box/large, 2), \
 		new/datum/stack_recipe("donut box", /obj/item/weapon/storage/box/donut/empty), \
-		new/datum/stack_recipe("egg box", /obj/item/weapon/storage/fancy/egg_box/empty), \
+		new/datum/stack_recipe("egg box", /obj/item/weapon/storage/box/egg_box/empty), \
 		new/datum/stack_recipe("cigarette carton", /obj/item/weapon/storage/box/cigarettes, 4), \
 		new/datum/stack_recipe("light tubes box", /obj/item/weapon/storage/box/lights/tubes/empty), \
 		new/datum/stack_recipe("light bulbs box", /obj/item/weapon/storage/box/lights/bulbs/empty), \

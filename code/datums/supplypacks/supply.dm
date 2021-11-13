@@ -88,13 +88,6 @@
 	containertype = /obj/structure/largecrate
 	containername = "coolant tank crate"
 
-/decl/hierarchy/supply_pack/supply/fueltank
-	name = "Liquid - Fuel tank"
-	contains = list(/obj/structure/reagent_dispensers/fueltank)
-	cost = 8
-	containertype = /obj/structure/largecrate
-	containername = "fuel tank crate"
-
 /decl/hierarchy/supply_pack/supply/watertank
 	name = "Liquid - Water tank"
 	contains = list(/obj/structure/reagent_dispensers/watertank)

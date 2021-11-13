@@ -31,10 +31,10 @@
 /obj/item/clothing/cloak
 	name = "black cloak"
 	desc = "A dark-colored cloak. Appears to have 2 pockets inside."
-	icon = 'icons/obj/clothing/cloaks.dmi'
+	icon = 'icons/mob/suit.dmi'
 	icon_state = "blackcloak"
 	w_class = 3	//Classified as normal instead of small items to prevent infinite storage capabilities!!!
-	slot_flags = SLOT_BACK
+	slot_flags = SLOT_OCLOTHING
 	cold_protection = UPPER_TORSO | ARMS | HANDS
 	min_cold_protection_temperature = 257
 //Cloaks keep your chest, arms, and hands toasty, but only slightly. For reference, humans start taking cold damage at 260.15K.
@@ -73,3 +73,8 @@
 	name = "\improper Captain's Cloak"
 	desc = "An elegant blue cloak with gold trimming. Worn by the commander of the station."
 	icon_state = "capcloak"
+
+	/obj/item/clothing/cloak/hop
+		name = "\improper Head of Personnel's Cloak"
+		desc = "An elegant blue cloak for ID changers and paper pushers."
+		icon_state = "hopcloak"

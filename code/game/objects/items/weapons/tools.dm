@@ -568,7 +568,7 @@
 
 /obj/item/weapon/weldingtool/experimental
 	name = "experimental welding tool"
-	icon_state = "welder_l"
+	icon_state = "welder_x"
 	item_state = "welder"
 	desc = "A heavily modified welding tool that uses a nonstandard fuel mix. The internal fuel tank feels uncomfortably warm."
 	w_class = ITEM_SIZE_HUGE

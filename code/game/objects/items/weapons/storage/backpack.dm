@@ -48,7 +48,6 @@
 	icon_state = "holdingpack"
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = 56
-
 	New()
 		..()
 		return
@@ -238,6 +237,10 @@
 	name = "satchel"
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
+	item_state_slots = list(
+			slot_l_hand_str = "satchel",
+			slot_r_hand_str = "satchel",
+			)
 
 /obj/item/weapon/storage/backpack/satchel/grey
 	name = "grey satchel"
@@ -249,11 +252,19 @@
 	name = "brown leather satchel"
 	desc = "A very fancy satchel made with fine brown leather."
 	icon_state = "satchel"
+	item_state_slots = list(
+			slot_l_hand_str = "satchel1",
+			slot_r_hand_str = "satchel1",
+			)
 
 /obj/item/weapon/storage/backpack/satchel/black
 	name = "black leather satchel"
 	desc = "A very fancy satchel made with fine black leather."
 	icon_state = "satchel_black"
+	item_state_slots = list(
+			slot_l_hand_str = "satchel1",
+			slot_r_hand_str = "satchel1",
+			)
 
 /obj/item/weapon/storage/backpack/satchel/pocketbook
 	name = "black pocketbook"
@@ -263,6 +274,10 @@
 	slot_flags = SLOT_BACK
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+	item_state_slots = list(
+			slot_l_hand_str = "satchel1",
+			slot_r_hand_str = "satchel1",
+			)
 
 /obj/item/weapon/storage/backpack/satchel_eng
 	name = "industrial satchel"

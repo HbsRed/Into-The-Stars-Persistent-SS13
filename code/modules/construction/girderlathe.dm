@@ -108,13 +108,18 @@
 	ui_interact(user)
 
 /obj/machinery/girderlathe/attackby(var/obj/item/W as obj, var/mob/user as mob)
-	if(istype(W, /obj/item/stack/material))
-		var/obj/item/stack/material/M = W
-		var/amount = M.amount
-		if(M.use(amount))
-			stored_materials[M.material.type] += amount
 	if(processing)
 		to_chat(user, "You can't do that while it is running.")
+		return
+	if(istype(W, /obj/item/stack/material))
+		var/obj/item/stack/material/S = W
+		if(S.girder_blacklist)
+			to_chat(user, "You can't make girders out of \the [S]. Use common sense.")
+			return
+		var/amount = S.amount
+		if(S.use(amount))
+			stored_materials[S.material.type] += amount
+		return
 	if(default_deconstruction_screwdriver(user, W))
 		updateUsrDialog()
 		return

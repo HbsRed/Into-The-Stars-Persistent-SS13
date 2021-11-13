@@ -5,13 +5,21 @@
 /decl/hierarchy/supply_pack/hospitality/food
 	name = "Kitchen - Kitchen supplies"
 	contains = list(/obj/item/weapon/reagent_containers/food/condiment/flour = 6,
-					/obj/item/weapon/reagent_containers/food/condiment/enzyme,
 					/obj/item/weapon/reagent_containers/food/drinks/milk = 2,
 					/obj/item/weapon/reagent_containers/food/snacks/tofu = 4,
 					/obj/item/weapon/reagent_containers/food/snacks/meat = 4)
 	cost = 5
 	containertype = /obj/structure/closet/crate/freezer
 	containername = "food crate"
+
+/decl/hierarchy/supply_pack/hospitality/enzyme
+		name = "Kitchen - Universal Enzyme"
+		contains = list(/obj/item/weapon/reagent_containers/food/condiment/enzyme,
+						/obj/item/weapon/reagent_containers/food/condiment/enzyme,
+						/obj/item/weapon/reagent_containers/food/condiment/enzyme)
+		cost = 70
+		containertype = /obj/structure/closet/crate/freezer
+		containername = "enzyme crate"
 
 //foodstuffs
 /decl/hierarchy/supply_pack/hospitality/pizza
@@ -49,7 +57,7 @@
 
 /decl/hierarchy/supply_pack/hospitality/eggs
 	name = "Foodstuffs - Five cartons of eggs"
-	contains = list(/obj/item/weapon/storage/fancy/egg_box = 4)
+	contains = list(/obj/item/weapon/storage/box/egg_box = 4)
 	containertype = /obj/structure/closet/crate/freezer
 	containername = "egg crate"
 	cost = 12

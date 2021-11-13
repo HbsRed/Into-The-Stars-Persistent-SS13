@@ -167,7 +167,7 @@ var/list/mining_floors = list()
 //Not even going to touch this pile of spaghetti
 /turf/simulated/mineral/attackby(obj/item/weapon/W as obj, mob/user as mob)
 
-	if (!istype(usr, /mob/living/carbon/human))
+	if (!istype(usr, /mob/living/carbon/human) && !istype(user,/mob/living/silicon/robot))
 		to_chat(usr, "<span class='warning'>You don't have the dexterity to do this!</span>")
 		return
 
