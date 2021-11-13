@@ -27,8 +27,8 @@ SUBSYSTEM_DEF(asteroid)
 		mob_targets["[I]"] = list()
 		drill_targets["[I]"] = list()
 		asteroid_aggression["[I]"] = 0
-	for(var/I = 1; I <= 100; I++)
-		var/list/L = list(new /mob/living/simple_animal/hostile/voxslug(), new /mob/living/simple_animal/hostile/scarybat(), new /mob/living/simple_animal/hostile/creature())
+	for(var/I = 1; I <= 25; I++)
+		var/list/L = list(new /mob/living/simple_animal/hostile/voxslug(), new /mob/living/simple_animal/hostile/scarybat(), new /mob/living/simple_animal/hostile/creature(), new /mob/living/simple_animal/hostile/tormented())
 		for(var/mob/living/M in L)
 			M.stat = DEAD
 			dead_monsters |= M
@@ -245,6 +245,13 @@ SUBSYSTEM_DEF(asteroid)
 
 	if(!M)
 		return
+
+	if(istype(M, /mob/living/simple_animal/hostile/tormented))
+		T.visible_message("<span class='danger'>The ground trembles as a shambling tormented body emerges!</span>")
+		playsound(T, pick('sound/effects/asteroid/earthquake_short.ogg','sound/effects/asteroid/creepyshriek.ogg'), 75, 1, 5)
+		spawn(rand(1 SECOND, 2 SECONDS))
+			playsound(T, pick('sound/hallucinations/growl1.ogg','sound/hallucinations/growl2.ogg','sound/hallucinations/growl3.ogg','sound/hallucinations/wail.ogg'), 100, 1, 5)
+			M.forceMove(T)
 
 	if(istype(M, /mob/living/simple_animal/hostile/voxslug))
 		T.visible_message("<span class='danger'>The ground trembles as a vile glutslug burrows up!</span>")

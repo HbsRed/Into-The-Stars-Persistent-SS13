@@ -80,6 +80,23 @@
 	cant_hold = list(/obj/item/weapon/disk/nuclear)
 
 // -----------------------------
+//        Plastic Bag
+// -----------------------------
+
+/obj/item/weapon/storage/bag/wastebin
+	name = "plastic waste bin"
+	desc = "It's a very flimsy plastic trash can."
+	icon = 'icons/obj/trash.dmi'
+	icon_state = "wastebin"
+	item_state = "wastebin"
+
+	w_class = ITEM_SIZE_TINY
+	max_w_class = ITEM_SIZE_NORMAL
+	max_storage_space = DEFAULT_BOX_STORAGE
+	can_hold = list() // any
+	cant_hold = list(/obj/item/weapon/disk/nuclear)
+
+// -----------------------------
 //           Cash Bag
 // -----------------------------
 

@@ -36,7 +36,7 @@
 	container2 = null
 	. = ..()
 
-/mob/living/carbon/brain/say_understands(var/other)//Goddamn is this hackish, but this say code is so odd
+/mob/living/carbon/brain/say_understands(var/other)//Goddamn is this hackish, but this bay code is so odd
 	if (istype(other, /mob/living/silicon/ai))
 		if(!(container && istype(container, /obj/item/device/lmi)))
 			return 0
@@ -75,4 +75,3 @@
 
 /mob/living/carbon/lace/check_has_mouth()
 	return 0
-

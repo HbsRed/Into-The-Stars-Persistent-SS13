@@ -28,13 +28,27 @@
 			/obj/item/weapon/reagent_containers/glass/bottle/eznutrient = 60,
 			/obj/item/weapon/reagent_containers/glass/bottle/left4zed = 120,
 			/obj/item/weapon/reagent_containers/glass/bottle/robustharvest = 120),
+		"Art Supplies" = list(
+			/obj/item/frame/canvas = 200,
+			/obj/item/frame/canvasportrait = 120,
+			/obj/item/frame/canvas/size_m = 120,
+			/obj/item/frame/canvas/size_m/portrait = 120,
+			/obj/item/frame/canvas/size_m/landscape = 120),
 		"Materials" = list(
 			/obj/item/stack/material/cardboard/ten = 250,
 			/obj/item/stack/material/cloth/ten = 500,
 			/obj/item/stack/material/leather/ten = 800,
 			/obj/item/stack/material/wood/ten = 1500,
 			/obj/item/weapon/paper = 5,
-			/obj/item/weapon/paper_package = 250,)
+			/obj/item/weapon/paper_package = 250),
+		"Cleaning Products" = list(
+			/obj/item/weapon/soap/nanotrasen = 750,
+			/obj/item/weapon/reagent_containers/glass/bottle/ammonia = 350),
+		"Medicinal Extractions" = list(
+			/obj/item/weapon/reagent_containers/glass/bottle/antitoxin = 650,
+			/obj/item/weapon/reagent_containers/glass/bottle/inaprovaline = 450,
+			/obj/item/weapon/reagent_containers/glass/bottle/stoxin = 1000,
+			/obj/item/weapon/reagent_containers/glass/bottle/chloralhydrate = 1750),
 			)
 
 /obj/machinery/biogenerator/New()

@@ -434,7 +434,9 @@
 		var/list/banned_chems = list(
 			/datum/reagent/adminordrazine,
 			/datum/reagent/nutriment,
-			/datum/reagent/nanites
+			/datum/reagent/nanites,
+			/datum/reagent/aslimetoxin,
+			/datum/reagent/toxin/corrupting
 			)
 
 		if(prob(30))	banned_chems |= typesof(/datum/reagent/ethanol)

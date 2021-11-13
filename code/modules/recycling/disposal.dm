@@ -104,9 +104,16 @@
 		to_chat(user, "<span class='notice'>You empty the bag.</span>")
 		for(var/obj/item/O in T.contents)
 			T.remove_from_storage(O,src)
-		T.update_icon()
-		update_icon()
-		return
+			T.update_icon()
+			update_icon()
+			return
+
+	if(istype(I, /obj/item/weapon/storage/bag/wastebin))
+		var/obj/item/weapon/storage/bag/trash/T = I
+		to_chat(user, "<span class='notice'>You empty the contents into the disposal unit.</span>")
+		for(var/obj/item/O in T.contents)
+			T.remove_from_storage(O,src)
+			return
 
 	var/obj/item/grab/G = I
 	if(istype(G))	// handle grabbed mob

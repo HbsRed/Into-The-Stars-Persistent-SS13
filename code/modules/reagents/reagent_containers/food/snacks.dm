@@ -322,7 +322,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/cookie
 	name = "cookie"
 	desc = "COOKIE!!!"
-	icon_state = "COOKIE!!!"
+	icon_state = "cookie"
 	filling_color = "#dbc94f"
 	center_of_mass = "x=17;y=18"
 	nutriment_amt = 5

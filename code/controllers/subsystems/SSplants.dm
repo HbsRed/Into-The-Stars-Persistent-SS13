@@ -18,6 +18,16 @@ PROCESSING_SUBSYSTEM_DEF(plants)
 	var/list/plant_gene_datums = list()		// Stored datum versions of the gene masked list.
 
 /datum/controller/subsystem/processing/plants/Initialize()
+	   LAZYINITLIST(product_descs)
+	   LAZYINITLIST(seeds)
+	   LAZYINITLIST(gene_tag_masks)
+	   LAZYINITLIST(plant_icon_cache)
+	   LAZYINITLIST(plant_sprites)
+	   LAZYINITLIST(plant_product_sprites)
+	   LAZYINITLIST(gene_masked_list)
+	   LAZYINITLIST(plant_gene_datums)
+
+/datum/controller/subsystem/processing/plants/Initialize()
 	// Build the icon lists.
 	for(var/icostate in icon_states('icons/obj/hydroponics_growing.dmi'))
 		var/split = findtext(icostate,"-")
@@ -97,4 +107,20 @@ PROCESSING_SUBSYSTEM_DEF(plants)
 		seed.set_trait(TRAIT_LIGHT_TOLERANCE,5)
 		seed.set_trait(TRAIT_LOWKPA_TOLERANCE,25)
 		seed.set_trait(TRAIT_HIGHKPA_TOLERANCE,200)
-	return seed
+		return seed
+
+/datum/controller/subsystem/processing/plants/proc/save(var/savefile/F)
+	to_file(F["product_descs"],     product_descs)
+	to_file(F["seeds"],             seeds)
+	to_file(F["gene_tag_masks"],    gene_tag_masks)
+	to_file(F["gene_masked_list"],  gene_masked_list)
+	to_file(F["plant_gene_datums"], plant_gene_datums)
+	return F
+
+/datum/controller/subsystem/processing/plants/proc/load(var/savefile/F)
+	from_file(F["product_descs"],     product_descs)
+	from_file(F["seeds"],             seeds)
+	from_file(F["gene_tag_masks"],    gene_tag_masks)
+	from_file(F["gene_masked_list"],  gene_masked_list)
+	from_file(F["plant_gene_datums"], plant_gene_datums)
+	return F

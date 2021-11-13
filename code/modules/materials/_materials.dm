@@ -69,7 +69,7 @@
 	var/icon_reinf = "comp_solid"				// Reinforced wall icon tag. See header for valid icons.
 	var/icon_door = "metal"					// Door icon tag. See header for valid icons.
 	var/icon_table = "solid"				// Table icon tag. See header for valid icons.
-	
+
 	var/list/stack_origin_tech = list(TECH_MATERIAL = 1) // Research level for stacks.
 
 	// Attributes
