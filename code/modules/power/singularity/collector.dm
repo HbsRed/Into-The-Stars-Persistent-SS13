@@ -15,7 +15,7 @@ var/global/list/rad_collectors = list()
 	var/last_power_new = 0
 	var/active = 0
 	var/locked = 0
-	var/drainratio = 1
+	var/drainratio = 0.1
 
 /obj/machinery/power/rad_collector/New()
 	..()
@@ -36,14 +36,14 @@ var/global/list/rad_collectors = list()
 	if(P && active)
 		var/rads = SSradiation.get_rads_at_turf(get_turf(src))
 		if(rads)
-			receive_pulse(rads * 5) //Maths is hard
+			receive_pulse(rads * 3) //Maths is hard
 
 	if(P)
 		if(P.air_contents.gas["phoron"] == 0)
 			investigate_log("<font color='red'>out of fuel</font>.","singulo")
 			eject()
 		else
-			P.air_contents.adjust_gas("phoron", -0.001*drainratio)
+			P.air_contents.adjust_gas("phoron", -1*drainratio)
 	return
 
 
@@ -140,7 +140,7 @@ var/global/list/rad_collectors = list()
 /obj/machinery/power/rad_collector/proc/receive_pulse(var/pulse_strength)
 	if(P && active)
 		var/power_produced = 0
-		power_produced = P.air_contents.gas["phoron"]*pulse_strength*20
+		power_produced = P.air_contents.gas["phoron"]*pulse_strength*1.2
 		add_avail(power_produced)
 		last_power_new = power_produced
 		return

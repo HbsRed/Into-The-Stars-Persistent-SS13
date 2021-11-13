@@ -588,7 +588,7 @@
 /datum/design/item/autotailor/storage/gen/eggs
 	name = "Egg carton"
 	id = "eggs"
-	build_path = /obj/item/weapon/storage/fancy/egg_box/empty
+	build_path = /obj/item/weapon/storage/box/egg_box/empty
 
 /datum/design/item/autotailor/storage/gen/plast_bag	//can use custom colors, maybe
 	name = "Small plastic bag"

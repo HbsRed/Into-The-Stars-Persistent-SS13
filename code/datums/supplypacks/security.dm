@@ -261,7 +261,7 @@
 	containername = "\improper .45 ACP (Lethal) ammunition crate"
 	access = core_access_security_programs
 
-/decl/hierarchy/supply_pack/security/stsammo
+/decl/hierarchy/supply_pack/security/rifleammoofficer
 	name = "Ammunition - 5.56 (Lethal)"
 	contains = list(/obj/item/ammo_magazine/c556 = 3)
 	cost = 20

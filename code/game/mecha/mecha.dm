@@ -21,6 +21,7 @@
 	infra_luminosity = 15 //byond implementation is bugged.
 	anchor_fall = TRUE
 	w_class = ITEM_SIZE_NO_CONTAINER
+	should_save = 1
 	var/initial_icon = null //Mech type for resetting icon. Only used for reskinning kits (see custom items)
 	var/can_move = 1
 	var/mob/living/carbon/occupant = null

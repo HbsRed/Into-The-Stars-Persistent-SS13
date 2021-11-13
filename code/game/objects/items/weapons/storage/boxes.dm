@@ -502,3 +502,21 @@
 		/obj/item/weapon/implantpad,
 		/obj/item/weapon/implantcase/imprinting = 3
 		)
+
+/obj/item/weapon/storage/box/egg_box
+	icon = 'icons/obj/food.dmi'
+	icon_state = "eggbox"
+	name = "egg box"
+	storage_slots = 12
+	max_w_class = ITEM_SIZE_SMALL
+	w_class = ITEM_SIZE_NORMAL
+
+	can_hold = list(
+		/obj/item/weapon/reagent_containers/food/snacks/egg,
+		/obj/item/weapon/reagent_containers/food/snacks/boiledegg
+		)
+
+	startswith = list(/obj/item/weapon/reagent_containers/food/snacks/egg = 12)
+
+/obj/item/weapon/storage/box/egg_box/empty
+			startswith = null

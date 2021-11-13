@@ -500,16 +500,6 @@
 				connected_business.feed.current_issue.publish_date = "[stationdate2text()] [stationtime2text()]"
 				connected_business.feed.current_issue.publisher = user_id_card.registered_name
 				connected_business.feed.publish_issue()
-			
-		if("sale")
-			if(!connected_business) return
-			if(!user_id_card) return
-			if(!connected_business.status)
-				to_chat(usr, "The business is closed and so you cannot create a sale.")
-				return
-			if(!connected_business.has_access(user_id_card.registered_name, "Sales"))
-				to_chat(usr, "Access denied.")
-				return
 
 		if("copy_image1")
 			var/obj/item/I = usr.get_active_hand()
@@ -562,7 +552,7 @@
 					to_chat(usr, "Access denied.")
 					return
 				menu = 5
-				
+
 			else if (href_list["target"] == "logout")
 				viewing = null
 				business_name = ""

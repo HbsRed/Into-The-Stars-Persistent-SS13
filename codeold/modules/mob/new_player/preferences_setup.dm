@@ -1,0 +1,278 @@
+datum/preferences
+	//The mob should have a gender you want before running this proc. Will run fine without H
+	proc/randomize_appearance_and_body_for(var/mob/living/carbon/human/H)
+		chosen_pin = rand(1000,9999)
+		var/datum/species/current_species = all_species[species]
+		if(!current_species) current_species = all_species[SPECIES_HUMAN]
+		gender = pick(current_species.genders)
+
+		h_style = random_hair_style(gender, species)
+		f_style = random_facial_hair_style(gender, species)
+		if(current_species)
+			if(current_species.appearance_flags & HAS_A_SKIN_TONE)
+				s_tone = random_skin_tone()
+			if(current_species.appearance_flags & HAS_SKIN_COLOR)
+				r_skin = rand (0,255)
+				g_skin = rand (0,255)
+				b_skin = rand (0,255)
+			if(current_species.appearance_flags & HAS_EYE_COLOR)
+				randomize_eyes_color()
+			if(current_species.appearance_flags & HAS_SKIN_COLOR)
+				randomize_skin_color()
+			if(current_species.appearance_flags & HAS_HAIR_COLOR)
+				randomize_hair_color("hair")
+				randomize_hair_color("facial")
+			if(current_species.appearance_flags & IS_VATGROWN)
+				s_tone = vatgrown_skin_tone()
+				vatgrown_hair_color("hair")
+				vatgrown_hair_color("facial")
+		if(current_species.appearance_flags & HAS_UNDERWEAR)
+			all_underwear.Cut()
+			for(var/datum/category_group/underwear/WRC in GLOB.underwear.categories)
+				if(WRC.name == "Underwear, top")
+					if(gender == FEMALE)
+						all_underwear[WRC.name] = "Bra"
+					else
+						all_underwear[WRC.name] = "None"
+					continue
+				if(WRC.name == "Underwear, top")
+					if(gender == FEMALE)
+						all_underwear[WRC.name] = "Panties"
+					else
+						all_underwear[WRC.name] = "Boxers"
+					continue
+				var/datum/category_item/underwear/WRI = pick(WRC.items)
+				all_underwear[WRC.name] = WRI.name
+
+		backpack = decls_repository.get_decl(pick(subtypesof(/decl/backpack_outfit)))
+		age = rand(current_species.min_age, current_species.max_age)
+		b_type = RANDOM_BLOOD_TYPE
+		if(H)
+			copy_to(H)
+
+
+	proc/randomize_hair_color(var/target = "hair")
+		if(prob (75) && target == "facial") // Chance to inherit hair color
+			r_facial = r_hair
+			g_facial = g_hair
+			b_facial = b_hair
+			return
+
+		var/red
+		var/green
+		var/blue
+
+		var/col = pick ("blonde", "black", "chestnut", "copper", "brown", "wheat", "old", "punk")
+		switch(col)
+			if("blonde")
+				red = 255
+				green = 255
+				blue = 0
+			if("black")
+				red = 0
+				green = 0
+				blue = 0
+			if("chestnut")
+				red = 153
+				green = 102
+				blue = 51
+			if("copper")
+				red = 255
+				green = 153
+				blue = 0
+			if("brown")
+				red = 102
+				green = 51
+				blue = 0
+			if("wheat")
+				red = 255
+				green = 255
+				blue = 153
+			if("old")
+				red = rand (100, 255)
+				green = red
+				blue = red
+			if("punk")
+				red = rand (0, 255)
+				green = rand (0, 255)
+				blue = rand (0, 255)
+
+		red = max(min(red + rand (-25, 25), 255), 0)
+		green = max(min(green + rand (-25, 25), 255), 0)
+		blue = max(min(blue + rand (-25, 25), 255), 0)
+
+		switch(target)
+			if("hair")
+				r_hair = red
+				g_hair = green
+				b_hair = blue
+			if("facial")
+				r_facial = red
+				g_facial = green
+				b_facial = blue
+	
+	proc/vatgrown_hair_color(var/target = "hair")
+		var/red = 248
+		var/green = 240
+		var/blue = 208
+
+		switch(target)
+			if("hair")
+				r_hair = red
+				g_hair = green
+				b_hair = blue
+			if("facial")
+				r_facial = red
+				g_facial = green
+				b_facial = blue
+
+	proc/randomize_eyes_color()
+		var/red
+		var/green
+		var/blue
+
+		var/col = pick ("black", "grey", "brown", "chestnut", "blue", "lightblue", "green", "albino")
+		switch(col)
+			if("black")
+				red = 0
+				green = 0
+				blue = 0
+			if("grey")
+				red = rand (100, 200)
+				green = red
+				blue = red
+			if("brown")
+				red = 102
+				green = 51
+				blue = 0
+			if("chestnut")
+				red = 153
+				green = 102
+				blue = 0
+			if("blue")
+				red = 51
+				green = 102
+				blue = 204
+			if("lightblue")
+				red = 102
+				green = 204
+				blue = 255
+			if("green")
+				red = 0
+				green = 102
+				blue = 0
+			if("albino")
+				red = rand (200, 255)
+				green = rand (0, 150)
+				blue = rand (0, 150)
+
+		red = max(min(red + rand (-25, 25), 255), 0)
+		green = max(min(green + rand (-25, 25), 255), 0)
+		blue = max(min(blue + rand (-25, 25), 255), 0)
+
+		r_eyes = red
+		g_eyes = green
+		b_eyes = blue
+
+	proc/randomize_skin_color()
+		var/red
+		var/green
+		var/blue
+
+		var/col = pick ("black", "grey", "brown", "chestnut", "blue", "lightblue", "green", "albino")
+		switch(col)
+			if("black")
+				red = 0
+				green = 0
+				blue = 0
+			if("grey")
+				red = rand (100, 200)
+				green = red
+				blue = red
+			if("brown")
+				red = 102
+				green = 51
+				blue = 0
+			if("chestnut")
+				red = 153
+				green = 102
+				blue = 0
+			if("blue")
+				red = 51
+				green = 102
+				blue = 204
+			if("lightblue")
+				red = 102
+				green = 204
+				blue = 255
+			if("green")
+				red = 0
+				green = 102
+				blue = 0
+			if("albino")
+				red = rand (200, 255)
+				green = rand (0, 150)
+				blue = rand (0, 150)
+
+		red = max(min(red + rand (-25, 25), 255), 0)
+		green = max(min(green + rand (-25, 25), 255), 0)
+		blue = max(min(blue + rand (-25, 25), 255), 0)
+
+		r_skin = red
+		g_skin = green
+		b_skin = blue
+
+/datum/preferences/proc/dress_preview_mob(var/mob/living/carbon/human/mannequin, var/finalize = FALSE)
+	var/update_icon = TRUE
+	copy_to(mannequin, !finalize)
+	mannequin.real_name = real_name
+	if(selected_under)
+		selected_under.loc = mannequin
+		mannequin.equip_to_slot_if_possible(selected_under,slot_w_uniform)
+	else
+		selected_under = new /obj/item/clothing/under/color/grey()
+		mannequin.equip_to_slot_if_possible(selected_under,slot_w_uniform)
+	mannequin.equip_to_slot_or_del(selected_under,slot_w_uniform)
+	if(update_icon)
+		mannequin.update_icons()
+
+/datum/preferences/proc/update_preview_icon()
+	var/mob/living/carbon/human/dummy/mannequin/mannequin = get_mannequin(client_ckey)
+	mannequin.delete_inventory(TRUE)
+	dress_preview_mob(mannequin)
+
+	preview_icon = icon('icons/effects/128x48.dmi', bgstate)
+	preview_icon.Scale(48+32, 16+32)
+
+	mannequin.dir = NORTH
+	var/icon/stamp = getFlatIcon(mannequin)
+	preview_icon.Blend(stamp, ICON_OVERLAY, 25, 17)
+
+	mannequin.dir = WEST
+	stamp = getFlatIcon(mannequin)
+	preview_icon.Blend(stamp, ICON_OVERLAY, 1, 9)
+
+	mannequin.dir = SOUTH
+	stamp = getFlatIcon(mannequin)
+	preview_icon.Blend(stamp, ICON_OVERLAY, 49, 1)
+
+	preview_icon.Scale(preview_icon.Width() * 2, preview_icon.Height() * 2) // Scaling here to prevent blurring in the browser.
+
+/proc/get_preview_icon(var/atom/movable/mannequin)
+	var/icon/ico = icon('icons/effects/128x48.dmi', "steel")
+	ico.Scale(48+32, 16+32)
+
+	mannequin.dir = NORTH
+	var/icon/stamp = getFlatIcon(mannequin)
+	ico.Blend(stamp, ICON_OVERLAY, 25, 17)
+
+	mannequin.dir = WEST
+	stamp = getFlatIcon(mannequin)
+	ico.Blend(stamp, ICON_OVERLAY, 1, 9)
+
+	mannequin.dir = SOUTH
+	stamp = getFlatIcon(mannequin)
+	ico.Blend(stamp, ICON_OVERLAY, 49, 1)
+
+	ico.Scale(ico.Width() * 2, ico.Height() * 2) // Scaling here to prevent blurring in the browser.
+	return ico

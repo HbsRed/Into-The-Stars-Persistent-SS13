@@ -4,7 +4,7 @@
  *
  *
  * Contains:
- *		Egg Box
+ *
  *		Candle Box
  *		Crayon Box
  *		Cigarette Box
@@ -43,7 +43,7 @@
 /*
  * Egg Box
  */
-
+/*
 /obj/item/weapon/storage/fancy/egg_box
 	icon = 'icons/obj/food.dmi'
 	icon_state = "eggbox"
@@ -62,7 +62,7 @@
 
 /obj/item/weapon/storage/fancy/egg_box/empty
 	startswith = null
-
+*/
 
 /*
  * Candle Box

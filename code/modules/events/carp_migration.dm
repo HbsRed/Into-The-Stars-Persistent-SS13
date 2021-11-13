@@ -2,7 +2,8 @@
 	announceWhen	= 50
 	endWhen 		= 900
 
-	var/list/spawned_carp = list()
+	var/list/spawned_carp = list(
+	/mob/living/simple_animal/hostile/carp = 95)
 
 /datum/event/carp_migration/setup()
 	announceWhen = rand(40, 60)
@@ -20,9 +21,9 @@
 	if(severity == EVENT_LEVEL_MAJOR)
 		spawn_fish(landmarks_list.len)
 	else if(severity == EVENT_LEVEL_MODERATE)
-		spawn_fish(rand(4, 6)) 			//12 to 30 carp, in small groups
+		spawn_fish(rand(1, 2)) 			//12 to 30 carp, in small groups
 	else
-		spawn_fish(rand(1, 3), 1, 2)	//1 to 6 carp, alone or in pairs
+		spawn_fish(rand(1, 2), 1, 2)	//1 to 6 carp, alone or in pairs
 
 /datum/event/carp_migration/proc/spawn_fish(var/num_groups, var/group_size_min=3, var/group_size_max=5)
 	var/list/spawn_locations = list()
@@ -41,7 +42,7 @@
 				spawned_carp.Add(new /mob/living/simple_animal/hostile/carp(spawn_locations[i]))
 			i++
 		else
-			group_size = max(1,round(group_size/6))
+			group_size = max(1,round(group_size/1))
 			group_size = min(spawn_locations.len-i+1,group_size)
 			for(var/j = 1, j <= group_size, j++)
 				spawned_carp.Add(new /mob/living/simple_animal/hostile/carp/pike(spawn_locations[i+j]))

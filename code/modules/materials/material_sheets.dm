@@ -16,6 +16,7 @@
 	var/material/material
 	var/perunit = SHEET_MATERIAL_AMOUNT
 	var/apply_colour //temp pending icon rewrite
+	var/girder_blacklist = 0
 
 /obj/item/stack/material/New(var/loc, var/amount, var/_material)
 	if(_material)
@@ -355,6 +356,7 @@
 	name = "sandstone brick"
 	icon_state = "sheet-sandstone"
 	default_type = MATERIAL_SANDSTONE
+	girder_blacklist = 1
 
 /obj/item/stack/material/sandstone/ten
 	amount = 10
@@ -383,6 +385,7 @@
 	name = "salt brick"
 	icon_state = "sheet-marble"
 	default_type = MATERIAL_ROCK_SALT
+	girder_blacklist = 1
 
 /obj/item/stack/material/salt/ten
 	amount = 10
@@ -475,6 +478,7 @@
 	name = MATERIAL_PLASTIC
 	icon_state = "sheet-plastic"
 	default_type = MATERIAL_PLASTIC
+	girder_blacklist = 1
 
 /obj/item/stack/material/plastic/ten
 	amount = 10
@@ -490,6 +494,7 @@
 	icon_state = "sheet-marble"
 	default_type = MATERIAL_SULFUR
 	apply_colour = 1
+	girder_blacklist = 1
 
 /obj/item/stack/material/sulfur/ten
 	amount = 10
@@ -548,6 +553,7 @@
 	name = MATERIAL_GLASS
 	icon_state = "sheet-glass"
 	default_type = MATERIAL_GLASS
+	girder_blacklist = 1
 
 /obj/item/stack/material/glass/ten
 	amount = 10
@@ -562,6 +568,7 @@
 	name = "reinforced glass"
 	icon_state = "sheet-rglass"
 	default_type = MATERIAL_REINFORCED_GLASS
+	girder_blacklist = 1
 
 /obj/item/stack/material/glass/reinforced/ten
 	amount = 10
@@ -578,6 +585,7 @@
 	singular_name = "borosilicate glass sheet"
 	icon_state = "sheet-phoronglass"
 	default_type = MATERIAL_PHORON_GLASS
+	girder_blacklist = 1
 
 /obj/item/stack/material/glass/phoronglass/ten
 	amount = 10
@@ -594,6 +602,7 @@
 	singular_name = "reinforced borosilicate glass sheet"
 	icon_state = "sheet-phoronrglass"
 	default_type = MATERIAL_REINFORCED_PHORON_GLASS
+	girder_blacklist = 1
 
 /obj/item/stack/material/glass/phoronrglass/ten
 	amount = 10
@@ -608,6 +617,7 @@
 	name = "fiberglass"
 	icon_state = "sheet-fiberglass"
 	default_type = "fiberglass"
+	girder_blacklist = 1
 
 /obj/item/stack/material/glass/fiberglass/ten
 	amount = 10
@@ -637,6 +647,7 @@
 	name = "wooden plank"
 	icon_state = "sheet-wood"
 	default_type = MATERIAL_WOOD
+	girder_blacklist = 1
 
 /obj/item/stack/material/wood/ten
 	amount = 10
@@ -651,6 +662,7 @@
 	name = MATERIAL_CLOTH
 	icon_state = "sheet-cloth"
 	default_type = MATERIAL_CLOTH
+	girder_blacklist = 1
 
 /obj/item/stack/material/cloth/ten
 	amount = 10
@@ -665,6 +677,7 @@
 	name = MATERIAL_CARDBOARD
 	icon_state = "sheet-card"
 	default_type = MATERIAL_CARDBOARD
+	girder_blacklist = 1
 
 /obj/item/stack/material/cardboard/ten
 	amount = 10
@@ -680,6 +693,7 @@
 	desc = "The by-product of mob grinding."
 	icon_state = "sheet-leather"
 	default_type = MATERIAL_LEATHER
+	girder_blacklist = 1
 
 /obj/item/stack/material/leather/ten
 	amount = 10
