@@ -4,7 +4,7 @@
 //Potential replacement for genetics revives or something I dunno (?)
 
 #define CLONE_BIOMASS 150
-#define BIOMASS_MEAT_AMOUNT 50
+#define BIOMASS_MEAT_AMOUNT 15
 /obj/item/weapon/circuitboard/clonepod
 	name = "Circuit Board (Cloning Pod)"
 	build_path = /obj/machinery/clonepod
@@ -231,7 +231,7 @@
 			//Also heal some oxyloss ourselves just in case!!
 			occupant.adjustOxyLoss(-4)
 
-			use_power(7500) //This might need tweaking.
+			use_power(10000) //This might need tweaking.
 			return
 
 		else if((occupant.getCloneLoss() <= (100 - heal_level)) && (!eject_wait))
@@ -412,7 +412,7 @@
 				return
 		else
 	return
-
+/*
 /obj/item/weapon/paper/Cloning
 	name = "paper - 'H-87 Cloning Apparatus Manual"
 	info = {"<h4>Getting Started</h4>
@@ -436,3 +436,4 @@
 	<i>A good diskette is a great way to counter aforementioned genetic drift!</i><br>
 	<br>
 	<font size=1>This technology produced under license from Thinktronic Systems, LTD.</font>"}
+	*/

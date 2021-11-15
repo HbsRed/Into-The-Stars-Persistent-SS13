@@ -29,9 +29,9 @@
 		pod = locate(href_list["target"])
 		if(!pod) return 0
 		cloneNM.menu = 2
-		
+
 	if(href_list["finish"])
-		if(cloneNM.get_contributed() < 5000)
+		if(cloneNM.get_contributed() < 350)
 			to_chat(usr, "Not enough funding.")
 		if(!pod || !computer.dna_scanner || !computer.dna_scanner.stored_dna)
 			cloneNM.cancel_contracts()
@@ -45,7 +45,7 @@
 		if(pod.growclone(computer.dna_scanner.stored_dna))
 			for(var/obj/item/weapon/paper/contract/contract in cloneNM.signed_contracts)
 				contract.finalize()
-				cloneNM.signed_contracts -= contract	
+				cloneNM.signed_contracts -= contract
 			to_chat(usr, "The cloning processing is beginning.")
 			computer.dna_scanner.stored_dna = null
 			cloneNM.menu = 2
@@ -66,9 +66,9 @@
 		if(!computer.dna_scanner || !computer.dna_scanner.stored_dna)
 			cloneNM.cancel_contracts()
 			cloneNM.menu = 1
-		var/cost = round(input("How much ethericoin should be the funding contract be for?", "Funding", 5000-cloneNM.get_contributed()) as null|num)
-		if(cost > 5000-cloneNM.get_contributed())
-			cost = 5000-cloneNM.get_contributed()
+		var/cost = round(input("How much ethericoin should be the funding contract be for?", "Funding", 350-cloneNM.get_contributed()) as null|num)
+		if(cost > 350-cloneNM.get_contributed())
+			cost = 350-cloneNM.get_contributed()
 		if(!cost || cost < 0)
 			return 0
 		var/choice = input(usr,"This will create a funding contract for [cost] ethericoin.") in list("Confirm", "Cancel")
@@ -96,11 +96,11 @@
 	var/menu = 1
 	var/list/signed_contracts = list()
 	var/list/pending_contracts = list()
-	
+
 /datum/nano_module/program/clone_manager/Destroy()
 	cancel_contracts()
-	. = ..()	
-	
+	. = ..()
+
 /datum/nano_module/program/clone_manager/proc/cancel_contracts()
 	for(var/obj/item/weapon/paper/contract/contract in pending_contracts)
 		contract.cancel()
@@ -124,8 +124,8 @@
 	SSnano.update_uis(src)
 	return 1
 
-		
-	
+
+
 /datum/nano_module/program/clone_manager/proc/format_pods()
 	if(!program.computer.dna_scanner) return 0
 	var/list/formatted = list()
@@ -157,7 +157,7 @@
 	data["menu"] = menu
 	var/commitment = get_contributed()
 	data["commitment"] = commitment
-	data["finishable"] = commitment >= 5000
+	data["finishable"] = commitment >= 350
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
 		ui = new(user, src, ui_key, "cloning_management.tmpl", "Cloning Management", 400, 450, state = state)
