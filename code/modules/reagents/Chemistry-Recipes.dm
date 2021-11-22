@@ -633,6 +633,18 @@
 	s.set_up(created_volume, location, holder, 2)
 	s.start()
 
+
+// Crayon Creation
+
+/datum/chemical_reaction/crayonwax
+	name = "Crayon wax"
+	result = null
+	required_reagents = list(/datum/reagent/glycerol = 1, /datum/reagent/water = 2)
+	result_amount = 5
+
+/datum/chemical_reaction/crayonwax/on_reaction(var/datum/reagents/holder, var/created_volume)
+	new /obj/item/stack/material/crayonwax(get_turf(holder.my_atom), created_volume)
+
 /* Paint */
 
 /datum/chemical_reaction/red_paint
@@ -1353,7 +1365,7 @@
 /datum/chemical_reaction/soysauce_acid
 	name = "Bitey Soy Sauce"
 	result = /datum/reagent/nutriment/soysauce
-	required_reagents = list(/datum/reagent/drink/milk/soymilk = 4, /datum/reagent/acid = 1) 
+	required_reagents = list(/datum/reagent/drink/milk/soymilk = 4, /datum/reagent/acid = 1)
 	result_amount = 5
 
 /datum/chemical_reaction/ketchup
@@ -1931,31 +1943,31 @@
 	result = /datum/reagent/ethanol/driestmartini
 	required_reagents = list(/datum/reagent/drink/nothing = 1, /datum/reagent/ethanol/gin = 1)
 	result_amount = 2
-	
+
 /datum/chemical_reaction/bluebird
 	name = "Blue Bird"
 	result = /datum/reagent/ethanol/bluebird
 	required_reagents = list(/datum/reagent/ethanol/gin = 1, /datum/reagent/ethanol/bluecuracao = 1, /datum/reagent/drink/juice/lemon = 1)
 	result_amount = 3
-	
+
 /datum/chemical_reaction/bj
 	name = "BJ"
 	result = /datum/reagent/ethanol/bj
 	required_reagents = list(/datum/reagent/ethanol/coffee/kahlua = 1, /datum/reagent/drink/milk/cream = 1)
 	result_amount = 2
-	
+
 /datum/chemical_reaction/starrycola
 	name = "Starry Cola"
 	result = /datum/reagent/ethanol/starrycola
 	required_reagents = list(/datum/reagent/ethanol/moonshine = 1, /datum/reagent/drink/space_cola = 2)
 	result_amount = 3
-	
+
 /datum/chemical_reaction/calvincraig
 	name = "Calvin Craig"
 	result = /datum/reagent/ethanol/calvincraig
 	required_reagents = list(/datum/reagent/drink/dr_gibb = 1, /datum/reagent/drink/space_up = 1, /datum/reagent/sugar = 1,  /datum/reagent/drink/juice/lemon = 1, /datum/reagent/ethanol/melonliquor = 2)
 	result_amount = 6
-	
+
 /datum/chemical_reaction/white_russian
 	name = "White Russian"
 	result = /datum/reagent/ethanol/white_russian
