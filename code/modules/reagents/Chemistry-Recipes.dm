@@ -639,7 +639,7 @@
 /datum/chemical_reaction/crayonwax
 	name = "Crayon wax"
 	result = null
-	required_reagents = list(/datum/reagent/glycerol = 1, /datum/reagent/water = 2)
+	required_reagents = list(/datum/reagent/glycerol = 3, /datum/reagent/water = 2)
 	result_amount = 5
 
 /datum/chemical_reaction/crayonwax/on_reaction(var/datum/reagents/holder, var/created_volume)
