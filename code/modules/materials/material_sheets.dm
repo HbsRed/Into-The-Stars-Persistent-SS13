@@ -490,7 +490,7 @@
 //--------------------------------
 /obj/item/stack/material/CrayonWax
 	name = MATERIAL_CRAYONWAX
-	icon_state = ""
+	icon_state = "crayonwax"
 	default_type = MATERIAL_CRAYONWAX
 	girder_blacklist = 1
 //--------------------------------
