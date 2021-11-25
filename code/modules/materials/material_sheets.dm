@@ -488,7 +488,7 @@
 //--------------------------------
 //	CrayonWax
 //--------------------------------
-/obj/item/stack/material/CrayonWax
+/obj/item/stack/material/crayonwax
 	name = MATERIAL_CRAYONWAX
 	icon_state = "crayonwax"
 	default_type = MATERIAL_CRAYONWAX
