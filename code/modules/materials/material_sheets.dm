@@ -485,7 +485,14 @@
 
 /obj/item/stack/material/plastic/fifty
 	amount = 50
-
+//--------------------------------
+//	CrayonWax
+//--------------------------------
+/obj/item/stack/material/crayonwax
+	name = MATERIAL_CRAYONWAX
+	icon_state = "crayonwax"
+	default_type = MATERIAL_CRAYONWAX
+	girder_blacklist = 1
 //--------------------------------
 //	Sulfur
 //--------------------------------

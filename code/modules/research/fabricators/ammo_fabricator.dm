@@ -134,13 +134,13 @@
 	id = "shell"
 	build_path = /obj/item/ammo_casing/shotgun/pellet
 	materials = list(MATERIAL_STEEL = 360, MATERIAL_ALUMINUM = 100)
-
+/*
 /datum/design/item/ammofab/shotgun/rubber
 	name = "Rubber Shotgun Shell"
 	id = "shellr"
 	build_path = /obj/item/ammo_casing/shotgun/rubber
 	materials = list(MATERIAL_PLASTIC = 180, MATERIAL_ALUMINUM = 100)
-
+*/
 /datum/design/item/ammofab/shotgun/blank
 	name = "Blank Shotgun Shell"
 	id = "shellb"
@@ -196,7 +196,7 @@
 	req_tech = list(TECH_MATERIAL = 1, TECH_COMBAT = 1)
 	materials = list(MATERIAL_STEEL = 1000)
 	time = 10
-
+/*
 /datum/design/item/ammofab/magazines/a357
 	name = ".357 Speedloader"
 	id = "a357m"
@@ -216,7 +216,7 @@
 	name = ".50 Speedloader"
 	id = "c50m"
 	build_path = /obj/item/ammo_magazine/c50/empty
-
+*/
 /datum/design/item/ammofab/magazines/c45
 	name = ".45 Magazine"
 	id = "c45m"
@@ -256,12 +256,12 @@
 	name = "20mm Magazine"
 	id = "a75m"
 	build_path = /obj/item/ammo_magazine/a75/empty
-
+/*
 /datum/design/item/ammofab/magazines/c556
 	name = "5.56 Magazine"
 	id = "c556m"
 	build_path = /obj/item/ammo_magazine/c556/empty
-
+*/
 // Ammo Boxes
 
 /datum/design/item/ammofab/ammobox
