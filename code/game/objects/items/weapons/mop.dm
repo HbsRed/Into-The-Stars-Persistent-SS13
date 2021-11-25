@@ -1,5 +1,5 @@
 /obj/item/weapon/mop
-	desc = "The world of janitalia wouldn't be complete without a mop."
+	desc = "A simple plastic mop used for a variety of cleaning from viscera to dirt."
 	name = "mop"
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "mop"

@@ -223,7 +223,7 @@
 		new/datum/stack_recipe("light bulbs box", /obj/item/weapon/storage/box/lights/bulbs/empty), \
 		new/datum/stack_recipe("mouse traps box", /obj/item/weapon/storage/box/mousetraps/empty), \
 		new/datum/stack_recipe("pizza box", /obj/item/pizzabox), \
-		new/datu/stack_recipe("crayon box", /obj/item/weapon/storage/fancy/crayons/blank)
+		new/datum/stack_recipe("crayon box", /obj/item/weapon/storage/fancy/crayons/blank)
 		))
 	recipes += new/datum/stack_recipe("hand-rolled cigarette", /obj/item/clothing/mask/smokable/cigarette/custom)
 	recipes += new/datum/stack_recipe("empty cigarette pack", /obj/item/weapon/storage/fancy/cigarettes/blank)
